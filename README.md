@@ -81,7 +81,9 @@ Additional information about the meal is available through the sensor attributes
 InLeMa includes an optional custom dashboard card designed specifically for the meal planner.
 
 <p align="center">
-  <img src="assets/dashboard-card.png" alt="InLeMa Home Assistant Dashboard Card" width="650">
+  <img src="assets/Dashboard_Card.png"
+       alt="InLeMa Home Assistant Dashboard Card"
+       width="650">
 </p>
 
 The card uses:
