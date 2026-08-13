@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/inlema-logo.png" alt="InLeMa Logo" width="120">
+  <img src="assets/InLeMa_Banner.png" alt="InLeMa Banner" width="100%">
 </p>
 
 <h1 align="center">InLeMa for Home Assistant</h1>
@@ -26,12 +26,15 @@
 
 ## About
 
+<p align="left">
+  <img src="assets/logo.png" alt="InLeMa Logo" width="90">
+</p>
+
 **InLeMa for Home Assistant** connects your InLeMa account with Home Assistant.
 
 The integration brings your meal planning data directly into your smart home and makes your **next planned meal** available as a Home Assistant entity.
 
 Authentication is handled securely using **OAuth2**. Your InLeMa password is never shared with or stored by Home Assistant.
-
 ---
 
 ## Features
