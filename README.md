@@ -321,8 +321,8 @@ This project is not part of the official **Works with Home Assistant** certifica
 
 ---
 
-<p align="center">
-  <img src="assets/inlema-logo.png" alt="InLeMa" width="70">
+<p align="left">
+  <img src="assets/logo.png" alt="InLeMa Logo" width="90">
 </p>
 
 <p align="center">
