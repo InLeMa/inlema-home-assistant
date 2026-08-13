@@ -1,0 +1,5 @@
+DOMAIN = "inlema"
+
+SUPABASE_URL = "https://ccpkaydyhygetzjigsdr.supabase.co"
+
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNjcGtheWR5aHlnZXR6amlnc2RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY1NTUxMDcsImV4cCI6MjA2MjEzMTEwN30.VI9hdgx2nFHDEJQNsoX5FAPfWxbzcXAcRVjbyRxmzRw"
