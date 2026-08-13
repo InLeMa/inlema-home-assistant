@@ -1,220 +1,261 @@
 <p align="center">
-  <img src="assets/inlema-logo.png" alt="InLeMa" width="120">
+  <img src="assets/inlema-logo.png" alt="InLeMa Logo" width="120">
 </p>
-
 
 <h1 align="center">InLeMa for Home Assistant</h1>
 
-
 <p align="center">
-  Bring your InLeMa meal planner into your smart home.
+  <strong>Bring your InLeMa meal planner into your smart home.</strong>
 </p>
 
-
 <p align="center">
-  <strong>OAuth2 · Meal Planner · Home Assistant Sensor · Dashboard Card</strong>
+  OAuth2 &nbsp;•&nbsp; Meal Planner &nbsp;•&nbsp; Home Assistant Sensor &nbsp;•&nbsp; Dashboard Card
 </p>
 
+<p align="center">
+  <a href="https://www.inlema.de">InLeMa Website</a>
+  &nbsp;•&nbsp;
+  <a href="#installation">Installation</a>
+  &nbsp;•&nbsp;
+  <a href="#features">Features</a>
+  &nbsp;•&nbsp;
+  <a href="#support">Support</a>
+</p>
 
 ---
-
 
 ## About
 
-
 **InLeMa for Home Assistant** connects your InLeMa account with Home Assistant.
 
+The integration brings your meal planning data directly into your smart home and makes your **next planned meal** available as a Home Assistant entity.
 
-The integration brings your meal planning data directly into your smart home and makes the next planned meal available as a Home Assistant entity.
-
-
-Your InLeMa account is connected securely using **OAuth2**. Home Assistant does not receive or store your InLeMa password.
-
+Authentication is handled securely using **OAuth2**. Your InLeMa password is never shared with or stored by Home Assistant.
 
 ---
-
 
 ## Features
 
-
-- Secure account linking using **OAuth2**
-- Access to the user's InLeMa meal planner
-- Displays the **next planned meal**
-- Recipe names localized for supported languages
-- Meal date
-- Servings
-- Notes
-- Native Home Assistant sensor
-- Optional custom InLeMa dashboard card
-- Works with Home Assistant automations, templates and dashboards
-
+| Feature | Support |
+|---|:---:|
+| Secure OAuth2 account linking | ✅ |
+| Next planned meal | ✅ |
+| Localized recipe names | ✅ |
+| Meal date | ✅ |
+| Servings | ✅ |
+| Notes | ✅ |
+| Native Home Assistant sensor | ✅ |
+| Custom dashboard card | ✅ |
+| Home Assistant automations & templates | ✅ |
 
 ---
 
+## Home Assistant Entity
 
-## Entity
-
-
-The integration currently creates the following entity:
-
+The integration currently creates a sensor for your next planned meal:
 
 ```text
 sensor.nachste_mahlzeit
+```
 
-Example:
+### Example
 
-State:
-Chicken Tikka Masala
-
-
-Attributes:
+```yaml
+state: Chicken Tikka Masala
 date: 2026-08-18
 servings: 2
 notes: Dinner with friends
+```
 
-The state of the sensor contains the name of the next planned meal.
+The sensor state contains the name of the next planned recipe.
 
-Additional meal information is exposed through sensor attributes.
+Additional information about the meal is available through the sensor attributes.
 
-Dashboard Card
+---
 
-InLeMa also provides an optional custom dashboard card for Home Assistant.
+## Dashboard Card
 
-Example:
+InLeMa includes an optional custom dashboard card designed specifically for the meal planner.
 
-┌────────────────────────────────────┐
-│ InLeMa                       Today │
-│                                    │
-│ NEXT MEAL                          │
-│ Chicken Tikka Masala               │
-│                                    │
-│ 18 August · 2 servings             │
-└────────────────────────────────────┘
+<p align="center">
+  <img src="assets/dashboard-card.png" alt="InLeMa Home Assistant Dashboard Card" width="650">
+</p>
 
-The card automatically uses the entity:
+The card uses:
 
+```text
 sensor.nachste_mahlzeit
+```
 
-and follows the Home Assistant light and dark theme.
+and displays information such as:
 
-Authentication
+- Recipe name
+- Date
+- Number of servings
+- Notes
 
-InLeMa uses OAuth2 account linking.
+The card integrates with Home Assistant's light and dark themes.
 
-The connection flow works like this:
+---
 
+## Secure OAuth2 Authentication
+
+InLeMa uses **OAuth2 account linking** to connect Home Assistant with your InLeMa account.
+
+```text
 Home Assistant
       │
       ▼
-InLeMa OAuth authorization
+InLeMa OAuth Authorization
       │
       ▼
-User signs in to InLeMa
+Sign in to InLeMa
       │
       ▼
-User authorizes Home Assistant
+Authorize Home Assistant
       │
       ▼
-Home Assistant receives an OAuth token
+OAuth Token
       │
       ▼
-InLeMa data becomes available in Home Assistant
+InLeMa data in Home Assistant
+```
 
-Your InLeMa password is entered only on the InLeMa website.
+### Why OAuth2?
 
-Home Assistant receives an authorization token instead of your password.
+Your InLeMa credentials stay with InLeMa.
 
-Installation
-HACS
+Home Assistant does **not** receive your InLeMa password. Instead, Home Assistant receives an authorization token after you approve the connection.
 
-HACS installation will be available once the integration is published.
+---
 
-After installation:
+# Installation
 
-Restart Home Assistant.
-Open Settings → Devices & services.
-Select Add Integration.
-Search for InLeMa.
-Start the account linking process.
-Sign in with your InLeMa account.
-Authorize Home Assistant.
+## HACS
 
-After successful authorization, the InLeMa entities will appear automatically.
+> **HACS installation will be available once the integration is published.**
 
-Manual installation
+After the integration has been installed:
+
+1. Restart **Home Assistant**.
+2. Open **Settings → Devices & services**.
+3. Select **Add Integration**.
+4. Search for **InLeMa**.
+5. Start the account linking process.
+6. Sign in with your InLeMa account.
+7. Authorize Home Assistant.
+
+After successful authorization, the InLeMa entities are created automatically.
+
+---
+
+## Manual Installation
 
 For development and testing, copy:
 
+```text
 custom_components/inlema
+```
 
-to:
+into your Home Assistant custom components directory:
 
+```text
 /config/custom_components/inlema
+```
 
-or, depending on your Home Assistant installation:
+Depending on your Home Assistant installation, the path may also appear as:
 
+```text
 /homeassistant/custom_components/inlema
+```
 
 Restart Home Assistant afterwards.
 
-Requirements
+Then open:
 
-You need:
+**Settings → Devices & services → Add Integration → InLeMa**
 
-Home Assistant
-An InLeMa account
-Internet access
-Cloud synchronization enabled for the relevant InLeMa data
-Languages
+---
 
-The integration is designed to support:
+## Requirements
 
-German
-English
-Russian
+To use the integration you need:
 
-Recipe names from InLeMa's standard recipe library can be displayed using localized translations.
+- Home Assistant
+- An InLeMa account
+- Internet access
+- Access to the relevant InLeMa cloud-synchronized data
 
-Custom user recipes keep their individual recipe names.
+---
 
-Privacy
+## Languages
 
-InLeMa only exposes the data required by the integration.
+InLeMa for Home Assistant is designed to support:
 
-Authentication is handled through OAuth2.
+| Language | Support |
+|---|:---:|
+| 🇩🇪 German | ✅ |
+| 🇬🇧 English | ✅ |
+| 🇷🇺 Russian | ✅ |
 
-Home Assistant does not receive your InLeMa password.
+Recipe names from the InLeMa standard recipe library can be displayed using localized translations.
 
-Access to user-specific InLeMa data is protected by the authenticated account connection.
+Custom user-created recipes retain their individual names.
 
-Current scope
+---
 
-The first version focuses on the InLeMa Meal Planner.
+## Privacy & Security
 
-Current Home Assistant functionality:
+Privacy is an important part of the InLeMa integration.
 
-Meal Planner
-└── Next planned meal
-    ├── Recipe name
-    ├── Date
-    ├── Servings
-    └── Notes
+- Authentication is handled using **OAuth2**
+- Home Assistant does **not** receive your InLeMa password
+- Access is associated with the authenticated InLeMa account
+- Only data required by the integration is requested and processed
+- User-specific InLeMa data remains protected by the authenticated connection
 
-Additional InLeMa features may be added in future versions.
+---
 
-Planned features
+## Current Scope
 
-Possible future additions include:
+The first version of the integration focuses on the **InLeMa Meal Planner**.
 
-More meal planner entities
-Upcoming meals
-Today's meal
-Meal planner calendar support
-Shopping list integration
-Pantry / stock entities
-Additional dashboard cards
-Home Assistant services and actions
-Repository structure
+```text
+InLeMa
+│
+└── Meal Planner
+    │
+    └── Next planned meal
+        ├── Recipe name
+        ├── Date
+        ├── Servings
+        └── Notes
+```
+
+This provides the foundation for bringing additional InLeMa functionality into Home Assistant in future versions.
+
+---
+
+## Planned Features
+
+The integration is under active development.
+
+Potential future additions include:
+
+- Upcoming meals
+- Today's meal
+- Additional meal planner entities
+- Home Assistant calendar support
+- Shopping list integration
+- Pantry / stock entities
+- Additional dashboard cards
+- Home Assistant services and actions
+
+---
+
+## Repository Structure
+
+```text
 inlema-home-assistant/
 │
 ├── custom_components/
@@ -227,22 +268,59 @@ inlema-home-assistant/
 │       ├── sensor.py
 │       └── strings.json
 │
+├── assets/
+│   ├── inlema-logo.png
+│   └── dashboard-card.png
+│
 ├── README.md
 ├── hacs.json
 ├── LICENSE
 └── .gitignore
-Support
+```
 
-If you find a bug or have a feature request, please open an issue in this repository.
+---
 
-For information about InLeMa:
+## Support
 
-https://www.inlema.de
+Found a bug or have an idea for the integration?
 
-Disclaimer
+Please use the **Issues** section of this repository for bug reports and feature requests.
 
-This is an integration for connecting InLeMa with Home Assistant.
+For more information about InLeMa, visit:
+
+**[www.inlema.de](https://www.inlema.de)**
+
+---
+
+## About InLeMa
+
+**InLeMa** helps organize recipes, meal planning, shopping lists and pantry management in one place.
+
+The Home Assistant integration connects your InLeMa data with your smart home.
+
+<p align="center">
+  <a href="https://www.inlema.de">
+    <strong>Visit InLeMa →</strong>
+  </a>
+</p>
+
+---
+
+## Disclaimer
+
+InLeMa for Home Assistant is a third-party integration for connecting **InLeMa** with **Home Assistant**.
 
 Home Assistant is a trademark of the Open Home Foundation.
 
-This project is not part of the official Home Assistant "Works with Home Assistant" certification program.
+This project is not part of the official **Works with Home Assistant** certification program.
+
+---
+
+<p align="center">
+  <img src="assets/inlema-logo.png" alt="InLeMa" width="70">
+</p>
+
+<p align="center">
+  <strong>InLeMa</strong><br>
+  <sub>Meal planning for your smart home.</sub>
+</p>
