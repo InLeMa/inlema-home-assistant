@@ -3,10 +3,6 @@
   "name": "InLeMa",
   "version": "0.2.0",
   "documentation": "https://www.inlema.de",
-  "issue_tracker": "https://github.com/InLeMa/inlema-home-assistant/issues",
-  "codeowners": [
-    "@InLeMa"
-  ],
   "config_flow": true,
   "integration_type": "service",
   "iot_class": "cloud_polling",

@@ -15,7 +15,7 @@ from homeassistant.util import dt as dt_util
 from .const import SUPABASE_ANON_KEY, SUPABASE_URL
 
 
-SCAN_INTERVAL = timedelta(minutes=5)
+SCAN_INTERVAL = timedelta(seconds=30)
 
 
 async def async_setup_entry(
