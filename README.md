@@ -26,17 +26,73 @@
 
 ## About
 
-<p align="left">
-  <img src="assets/logo.png" alt="InLeMa Logo" width="90">
+<p align="center">
+  <img src="assets/logo.png" alt="InLeMa Logo" width="100">
 </p>
 
-**InLeMa for Home Assistant** connects your InLeMa account with Home Assistant.
+<p align="center">
+  <strong>InLeMa – Intelligent Food Management</strong><br>
+  Recipes, meal planning, shopping lists and pantry management – connected in one place.
+</p>
 
-The integration brings your meal planning data directly into your smart home and makes your **next planned meal** available as a Home Assistant entity.
+**InLeMa** is a food and meal management application designed to connect the entire process from choosing a recipe to planning meals, shopping for ingredients and managing the food you already have at home.
 
-Authentication is handled securely using **OAuth2 with PKCE**. Your InLeMa password is never shared with or stored by Home Assistant.
+Instead of treating recipes, shopping lists and pantry supplies as separate tools, InLeMa connects them into one workflow:
+
+<p align="center">
+  <strong>Recipes → Meal Planner → Shopping List → Pantry</strong>
+</p>
+
+### What can InLeMa do?
+
+🍽️ **Recipes**  
+Create your own recipes with ingredients, quantities, units and preparation instructions, or use recipes from the InLeMa recipe library as a starting point. Personal recipes can be adapted to your own preferences.
+
+📅 **Meal Planner**  
+Plan recipes for specific days and choose the number of servings for each planned meal. With an InLeMa account, supported meal planning data can be synchronized between your devices.
+
+🛒 **Shopping List**  
+Create shopping lists manually or transfer the required ingredients directly from a recipe. Existing items can be combined and purchased items can be checked off while shopping.
+
+🥫 **Pantry & Stock Management**  
+Keep track of the food you already have at home. InLeMa can compare recipe ingredients with your current stock and help you see what is already available and what still needs to be purchased.
+
+⭐ **Personal & Community Ratings**  
+Rate recipes for yourself and see Community ratings for shared InLeMa recipes. Recipes from the library can also be copied into your personal collection and modified without changing the original recipe.
+
+📖 **Import, Export & Cookbook**  
+Back up and restore your recipes using InLeMa's import and export functions. Your recipes can also be turned into a PDF cookbook including a table of contents and ingredient index.
+
+📍 **Smart Shopping on Android**  
+Frequently visited supermarkets can optionally be stored locally on Android devices. Using the device location, InLeMa can recognize a shopping visit and help transfer purchased items from the shopping list into your pantry afterwards.
+
+☁️ **Optional Account & Synchronization**  
+An InLeMa account is not required for basic use. With an account, supported data can be synchronized between devices and used by connected services such as Home Assistant.
+
+Some information intentionally remains local to the device, including personal recipe images and locally configured supermarkets.
 
 ---
+
+### InLeMa meets Home Assistant
+
+**InLeMa for Home Assistant** brings your meal planning data into your smart home.
+
+The integration securely connects Home Assistant to your InLeMa account using **OAuth2 with PKCE** and currently provides your **next planned meal** as a native Home Assistant entity.
+
+This includes information such as:
+
+- Recipe name
+- Planned date
+- Number of servings
+- Notes
+
+The entity can be used throughout Home Assistant – for example in **dashboards, templates and automations**.
+
+<p align="center">
+  <strong>Plan in InLeMa → Use it in your smart home</strong>
+</p>
+
+Authentication is handled securely through OAuth2. Your **InLeMa password is never shared with or stored by Home Assistant**.
 
 ## Features
 
