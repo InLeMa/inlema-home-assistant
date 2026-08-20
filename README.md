@@ -192,7 +192,21 @@ After you authorize the connection, Home Assistant receives an OAuth authorizati
 ---
 
 # Installation
+## Before you start: Create an InLeMa account
 
+A free **InLeMa account is required** to connect InLeMa with Home Assistant.
+
+If you do not already have an InLeMa account, visit:
+
+**[www.inlema.de](https://www.inlema.de)**
+
+Create an account and confirm your email address before continuing with the Home Assistant installation.
+
+> **Important:** InLeMa itself can be used without an account for basic local functionality. However, an account is required for the **Home Assistant integration**, because Home Assistant accesses your InLeMa data through the authenticated InLeMa connection.
+
+Once your InLeMa account is ready, continue with the installation below.
+
+---
 ## ~~HACS~~
 
 *HACS publication in progress.*
