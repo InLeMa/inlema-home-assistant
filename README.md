@@ -102,10 +102,7 @@ Authentication is handled securely through OAuth2. Your **InLeMa password is nev
 | Next planned meal | ✅ |
 | Localized recipe names | ✅ |
 | Meal date | ✅ |
-| Servings | ✅ |
-| Notes | ✅ |
 | Native Home Assistant sensor | ✅ |
-| Home Assistant automations & templates | ✅ |
 | Optional InLeMa dashboard card | ✅ |
 
 ---
