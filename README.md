@@ -275,47 +275,16 @@ Save the configuration and start Samba share.
 
 You can now access your Home Assistant file system from your Windows PC or Mac.
 
-#### Windows
+#### Windows Explorer
 
-Open the Windows **Start menu**, enter:
-
-```text
-cmd
-```
-
-and open the Command Prompt.
-
-You can then connect to your Home Assistant Samba share.
-
-For example, if your Home Assistant IP address is `192.168.1.100`, open:
+open your windows explorer and type:
 
 ```text
 \\192.168.1.100\config
 ```
-
 Replace `192.168.1.100` with the IP address of your own Home Assistant installation.
 
 Windows will ask for the username and password configured in Samba share.
-
-#### macOS
-
-Open **Finder** and select:
-
-**Go → Connect to Server**
-
-Enter:
-
-```text
-smb://192.168.1.100/config
-```
-
-Replace `192.168.1.100` with the IP address of your own Home Assistant installation.
-
-Enter the username and password configured in Samba share when prompted.
-
-After connecting, you can access the Home Assistant files directly from your computer.
-
----
 
 ### 6. Copy the InLeMa integration
 
