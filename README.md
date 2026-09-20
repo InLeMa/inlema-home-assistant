@@ -10,9 +10,15 @@
 
 ---
 
-**InLeMa for Home Assistant** connects your InLeMa account with Home Assistant.
+**InLeMa for Home Assistant** brings your meal planning, shopping lists, pantry and recipes directly into your smart home.
 
-The integration brings meal planning, shopping lists, pantry management and recipes from InLeMa directly into your smart home.
+[InLeMa](https://www.inlema.de) is a food management platform designed to simplify everyday meal planning and household organization. It combines recipes, meal planning, shopping lists and pantry management in one connected system.
+
+The Home Assistant integration connects your InLeMa account with Home Assistant, allowing you to access and manage your food-related data directly from your smart home dashboard.
+
+Plan meals, manage synchronized shopping lists, keep track of your pantry, search recipes and use the integrated Cooking Mode — without leaving Home Assistant.
+
+**Learn more about InLeMa at [www.inlema.de](https://www.inlema.de).**
 
 ## Features
 
