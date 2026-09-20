@@ -11,13 +11,14 @@ from homeassistant.core import (
     ServiceCall,
     SupportsResponse,
 )
-from homeassistant.helpers import config_entry_oauth2_flow
+from homeassistant.helpers import config_entry_oauth2_flow, config_validation as cv
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 from .api import InLeMaApi
 from .coordinator import InLeMaDataCoordinator
 
 FRONTEND_URL = "/inlema/inlema-card.js"
+CONFIG_SCHEMA = cv.config_entry_only_config_schema("inlema")
 FRONTEND_PATH = (
     Path(__file__).parent
     / "frontend"
