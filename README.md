@@ -1,4 +1,14 @@
-# InLeMa for Home Assistant
+<p align="center">
+  <img src="https://www.inlema.de/assets/assets/icon/logo.png" alt="InLeMa Logo" width="120">
+</p>
+
+<h1 align="center">InLeMa for Home Assistant</h1>
+
+<p align="center">
+  <strong>Food management for your smart home.</strong>
+</p>
+
+---
 
 **InLeMa for Home Assistant** connects your InLeMa account with Home Assistant.
 
@@ -80,4 +90,7 @@ More information about InLeMa:
 
 ---
 
-**InLeMa – Food management for your smart home.**
+<p align="center">
+  <strong>InLeMa</strong><br>
+  Food management for your smart home.
+</p>
