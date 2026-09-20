@@ -1,0 +1,80 @@
+search_recipe:
+  name: Rezept suchen
+  description: Sucht nach einem Rezept in InLeMa.
+  fields:
+    query:
+      name: Suchbegriff
+      description: Name oder Teil des Rezeptnamens.
+      required: true
+      example: Pfannkuchen
+      selector:
+        text:
+plan_meal:
+  name: Mahlzeit planen
+  description: Fügt ein InLeMa-Rezept dem Mahlzeitenplan hinzu.
+  fields:
+    recipe_id:
+      name: Rezept-ID
+      description: ID des zu planenden InLeMa-Rezepts.
+      required: true
+      selector:
+        text:
+
+    date:
+      name: Datum
+      description: Tag, an dem das Rezept geplant werden soll.
+      required: true
+      selector:
+        date:
+
+    servings:
+      name: Portionen
+      description: Anzahl der Portionen.
+      required: true
+      default: 2
+      selector:
+        number:
+          min: 1
+          max: 20
+          step: 1
+          mode: box
+add_recipe_to_shopping_list:
+  name: Rezept zur Einkaufsliste hinzufügen
+  description: Fügt die Zutaten eines InLeMa-Rezepts einer Einkaufsliste hinzu.
+  fields:
+    recipe_id:
+      name: Rezept-ID
+      description: ID des InLeMa-Rezepts.
+      required: true
+      selector:
+        text:
+
+    shopping_list_id:
+      name: Einkaufslisten-ID
+      description: ID der InLeMa-Einkaufsliste.
+      required: true
+      selector:
+        text:
+
+    servings:
+      name: Portionen
+      description: Gewünschte Anzahl der Portionen.
+      required: true
+      default: 4
+      selector:
+        number:
+          min: 1
+          max: 20
+          step: 1
+          mode: box
+get_recipe:
+  name: Rezept laden
+  description: Lädt ein vollständiges InLeMa-Rezept einschließlich Zutaten und Zubereitungsschritten.
+  fields:
+    recipe_id:
+      name: Rezept-ID
+      description: UUID des InLeMa-Rezepts.
+      required: true
+      example: "36fbaaa9-d60f-4589-85f5-4d684d3121c8"
+      selector:
+        text:
