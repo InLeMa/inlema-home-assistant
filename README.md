@@ -1,224 +1,209 @@
+```{=html}
 <p align="center">
-
-<img src="assets/InLeMa_Banner.png" alt="InLeMa Banner" width="100%">{=html}
-
+```
+`<img src="assets/InLeMa_Banner.png" alt="InLeMa Banner" width="100%">`{=html}
+```{=html}
 </p>
-
+```
+```{=html}
 <h1 align="center">
-
+```
 InLeMa for Home Assistant
-
+```{=html}
 </h1>
-
+```
+```{=html}
 <p align="center">
-
-<strong>{=html}Recipes, meal planning, shopping lists, pantry
-management and guided cooking in Home Assistant.</strong>{=html}
-
+```
+`<strong>`{=html}Recipes, meal planning, shopping lists, pantry
+management and guided cooking in Home Assistant.`</strong>`{=html}
+```{=html}
 </p>
-
+```
+```{=html}
 <p align="center">
-
+```
 OAuth2 + PKCE  •  Meal Calendar  •  Shopping Lists  •  Pantry  • 
 Cooking Mode
-
+```{=html}
 </p>
-
+```
+```{=html}
 <p align="center">
-
-<a href="https://www.inlema.de">{=html}InLeMa Website</a>{=html}  • 
-<a href="#installation">{=html}Installation</a>{=html}  • 
-<a href="#features">{=html}Features</a>{=html}  • 
-<a href="#services">{=html}Services</a>{=html}  • 
-<a href="#support">{=html}Support</a>{=html}
-
+```
+`<a href="https://www.inlema.de">`{=html}InLeMa Website`</a>`{=html}  • 
+`<a href="#installation">`{=html}Installation`</a>`{=html}  • 
+`<a href="#features">`{=html}Features`</a>`{=html}  • 
+`<a href="#services">`{=html}Services`</a>`{=html}  • 
+`<a href="#support">`{=html}Support`</a>`{=html}
+```{=html}
 </p>
+```
 
-About
+------------------------------------------------------------------------
 
+## About
+
+```{=html}
 <p align="center">
-
-<img src="assets/logo.png" alt="InLeMa Logo" width="100">{=html}
-
+```
+`<img src="assets/logo.png" alt="InLeMa Logo" width="100">`{=html}
+```{=html}
 </p>
-
+```
+```{=html}
 <p align="center">
-
-<strong>{=html}InLeMa -- Intelligent Food
-Management</strong>{=html}<br>{=html} From recipe to meal plan,
+```
+`<strong>`{=html}InLeMa -- Intelligent Food
+Management`</strong>`{=html}`<br>`{=html} From recipe to meal plan,
 shopping list, pantry and cooking.
-
+```{=html}
 </p>
-
-InLeMa connects food management into one continuous workflow instead
+```
+**InLeMa** connects food management into one continuous workflow instead
 of treating recipes, meal planning, shopping and pantry management as
 separate tools:
 
+```{=html}
 <p align="center">
-
-<strong>{=html}Recipes → Meal Planner → Shopping List → Pantry →
-Cooking</strong>{=html}
-
+```
+`<strong>`{=html}Recipes → Meal Planner → Shopping List → Pantry →
+Cooking`</strong>`{=html}
+```{=html}
 </p>
-
-InLeMa for Home Assistant brings this workflow into the smart home.
+```
+**InLeMa for Home Assistant** brings this workflow into the smart home.
 The integration connects Home Assistant securely to an InLeMa account
-using OAuth2 Authorization Code Flow with PKCE and exposes InLeMa
+using **OAuth2 Authorization Code Flow with PKCE** and exposes InLeMa
 data through native Home Assistant entities, services and an optional
 dashboard card.
 
 Authentication is user-specific. Home Assistant never receives or stores
 the user's InLeMa password.
 
-Features
+------------------------------------------------------------------------
 
-Meal planning
+## Features
 
-Next planned meal as a Home Assistant sensor
+### Meal planning
 
-Recipe name, date and servings
+-   Next planned meal as a Home Assistant sensor
+-   Recipe name, date and servings
+-   Upcoming meals in a native Home Assistant calendar
+-   Plan a meal directly from Home Assistant
+-   Recipe names resolved from the InLeMa translation database
 
-Upcoming meals in a native Home Assistant calendar
+### Shopping lists
 
-Plan a meal directly from Home Assistant
+-   Multiple InLeMa shopping lists exposed as native Home Assistant
+    **To-do** entities
+-   Bidirectional synchronization
+-   Check and uncheck shopping items
+-   Add and remove items
+-   Quantities and units in item descriptions
+-   Add all ingredients of a recipe to a selected shopping list
+-   Automatic ingredient scaling based on the requested number of
+    servings
+-   Existing InLeMa shopping-list logic remains responsible for merging
+    matching items
 
-Recipe names resolved from the InLeMa translation database
+### Pantry
 
-Shopping lists
+-   Pantry / stock summary sensor
+-   Total number of stock positions
+-   Selected pantry items can be exposed as individual Home Assistant
+    sensors
+-   Stock data is synchronized from the authenticated InLeMa account
 
-Multiple InLeMa shopping lists exposed as native Home Assistant
-To-do entities
+### Recipes
 
-Bidirectional synchronization
+-   Search the InLeMa recipe database from Home Assistant
+-   Retrieve a complete recipe
+-   Localized recipe and ingredient names
+-   Recipe image support
+-   Ingredients, quantities and units
+-   Preparation sections and individual cooking steps
+-   Servings and recipe metadata
 
-Check and uncheck shopping items
+### Cooking Mode
 
-Add and remove items
-
-Quantities and units in item descriptions
-
-Add all ingredients of a recipe to a selected shopping list
-
-Automatic ingredient scaling based on the requested number of
-servings
-
-Existing InLeMa shopping-list logic remains responsible for merging
-matching items
-
-Pantry
-
-Pantry / stock summary sensor
-
-Total number of stock positions
-
-Selected pantry items can be exposed as individual Home Assistant
-sensors
-
-Stock data is synchronized from the authenticated InLeMa account
-
-Recipes
-
-Search the InLeMa recipe database from Home Assistant
-
-Retrieve a complete recipe
-
-Localized recipe and ingredient names
-
-Recipe image support
-
-Ingredients, quantities and units
-
-Preparation sections and individual cooking steps
-
-Servings and recipe metadata
-
-Cooking Mode
-
-The InLeMa dashboard card includes a guided Cooking Mode.
+The InLeMa dashboard card includes a guided **Cooking Mode**.
 
 A recipe can be searched directly from Home Assistant. The card then
 loads the complete recipe and displays:
 
-Recipe image
-
-Recipe name
-
-Servings
-
-Ingredients
-
-Preparation overview
-
-Step-by-step cooking instructions
+-   Recipe image
+-   Recipe name
+-   Servings
+-   Ingredients
+-   Preparation overview
+-   Step-by-step cooking instructions
 
 This makes it possible to move from planning to actual cooking without
 leaving the Home Assistant dashboard.
 
-Secure account connection
+### Secure account connection
 
-OAuth2 Authorization Code Flow
+-   OAuth2 Authorization Code Flow
+-   PKCE
+-   Public OAuth client
+-   No InLeMa password stored in Home Assistant
+-   User-specific access through the authenticated account
+-   InLeMa/Supabase row-level access rules remain in effect
 
-PKCE
+------------------------------------------------------------------------
 
-Public OAuth client
-
-No InLeMa password stored in Home Assistant
-
-User-specific access through the authenticated account
-
-InLeMa/Supabase row-level access rules remain in effect
-
-Dashboard Card
+## Dashboard Card
 
 The integration includes the InLeMa dashboard card.
 
+```{=html}
 <p align="center">
-
-<img src="assets/InLeMa_Karte.PNG"
+```
+`<img src="assets/InLeMa_Karte.PNG"
        alt="InLeMa Home Assistant dashboard card"
-       width="460">{=html}
-
+       width="460">`{=html}
+```{=html}
 </p>
-
+```
 The card provides a compact overview of the most important InLeMa
 functions:
 
-Next meal with recipe image and servings
-
-Shopping lists with the number of open items
-
-Pantry with the number of stock positions
-
-Plan meal
-
-Cook recipe
-
-Buy ingredients
+-   **Next meal** with recipe image and servings
+-   **Shopping lists** with the number of open items
+-   **Pantry** with the number of stock positions
+-   **Plan meal**
+-   **Cook recipe**
+-   **Buy ingredients**
 
 The card acts as the central InLeMa entry point inside a Home Assistant
 dashboard.
 
-The frontend JavaScript is included in the integration. Depending on
-the Home Assistant installation, the dashboard resource may currently
-need to be registered manually. See Dashboard Card
-Setup.
+> The frontend JavaScript is included in the integration. Depending on
+> the Home Assistant installation, the dashboard resource may currently
+> need to be registered manually. See [Dashboard Card
+> Setup](#dashboard-card-setup).
 
-Native Home Assistant Entities
+------------------------------------------------------------------------
+
+## Native Home Assistant Entities
 
 The exact entity IDs are generated by Home Assistant and can differ
 between installations.
 
-Next meal sensor
+### Next meal sensor
 
 Provides the next planned InLeMa meal.
 
 Example:
 
+``` yaml
 state: Chicken Tikka Masala
 date: 2026-09-21
 servings: 4
+```
 
-Meal calendar
+### Meal calendar
 
 Upcoming InLeMa meals are available through a native Home Assistant
 calendar entity.
@@ -226,114 +211,118 @@ calendar entity.
 This allows planned meals to be used with Home Assistant's calendar UI
 and calendar-based automations.
 
-Shopping-list To-do entities
+### Shopping-list To-do entities
 
 Every synchronized InLeMa shopping list is represented as a native Home
 Assistant To-do entity.
 
 For example:
 
+``` text
 todo.meine_liste
 todo.party
+```
 
 Changes made through the Home Assistant To-do entity are synchronized
 back to InLeMa.
 
-Pantry sensors
+### Pantry sensors
 
 The integration provides a stock overview and can expose selected stock
 items as individual sensors.
 
-Services
+------------------------------------------------------------------------
+
+## Services
 
 InLeMa provides Home Assistant services for recipe and meal workflows.
 
-inlema.search_recipe
+### `inlema.search_recipe`
 
 Search the InLeMa recipe database.
 
 Input:
 
+``` yaml
 query: Chicken Tikka
+```
 
 The service returns matching recipes including their IDs and available
 metadata.
 
-inlema.get_recipe
+### `inlema.get_recipe`
 
 Load a complete recipe for use in the dashboard Cooking Mode.
 
 Input:
 
+``` yaml
 recipe_id: "RECIPE_UUID"
+```
 
 The response can include:
 
-Recipe name
+-   Recipe name
+-   Description
+-   Servings
+-   Recipe image
+-   Recipe metadata
+-   Translated ingredients
+-   Quantities and units
+-   Preparation sections
+-   Cooking steps
 
-Description
-
-Servings
-
-Recipe image
-
-Recipe metadata
-
-Translated ingredients
-
-Quantities and units
-
-Preparation sections
-
-Cooking steps
-
-inlema.plan_meal
+### `inlema.plan_meal`
 
 Add a recipe to the personal InLeMa meal plan.
 
 Example:
 
+``` yaml
 recipe_id: "RECIPE_UUID"
 date: "2026-09-21"
 servings: 4
+```
 
-inlema.add_recipe_to_shopping_list
+### `inlema.add_recipe_to_shopping_list`
 
 Add the ingredients of a recipe to an InLeMa shopping list.
 
 Example:
 
+``` yaml
 recipe_id: "RECIPE_UUID"
 shopping_list_id: "SHOPPING_LIST_UUID"
 servings: 4
+```
 
 Ingredient quantities are scaled from the recipe's original serving
 count to the requested serving count.
 
-Installation
+------------------------------------------------------------------------
 
-Current installation method
+# Installation
 
-InLeMa is not yet available through the default HACS repository.
+## Current installation method
+
+**InLeMa is not yet available through the default HACS repository.**
 
 Until HACS publication is complete, install the integration manually
 from this GitHub repository.
 
 Do not search for InLeMa in the default HACS integration list yet.
 
-Requirements
+------------------------------------------------------------------------
+
+## Requirements
 
 You need:
 
-A running Home Assistant installation
-
-An InLeMa account
-
-Internet access for the InLeMa cloud connection
-
-Access to the Home Assistant /config directory
-
-The current InLeMa Home Assistant repository
+-   A running Home Assistant installation
+-   An InLeMa account
+-   Internet access for the InLeMa cloud connection
+-   Access to the Home Assistant `/config` directory
+-   The current InLeMa Home Assistant repository
 
 A free InLeMa account is required for the Home Assistant connection.
 
@@ -343,76 +332,93 @@ accesses synchronized InLeMa data.
 
 Create or access your InLeMa account at:
 
-https://www.inlema.de
+**https://www.inlema.de**
 
-Manual Installation
+------------------------------------------------------------------------
 
-1. Download the repository
+## Manual Installation
+
+### 1. Download the repository
 
 Open:
 
-https://github.com/InLeMa/inlema-home-assistant
+**https://github.com/InLeMa/inlema-home-assistant**
 
 Select:
 
-Code → Download ZIP
+**Code → Download ZIP**
 
 Extract the downloaded ZIP file on your computer.
 
 The repository contains:
 
+``` text
 custom_components/
 └── inlema/
+```
 
-The complete inlema directory is the Home Assistant custom
+The complete `inlema` directory is the Home Assistant custom
 integration.
 
-2. Open the Home Assistant configuration directory
+------------------------------------------------------------------------
 
-You need file access to the Home Assistant /config directory.
+### 2. Open the Home Assistant configuration directory
 
-On Home Assistant OS, one convenient method is the Samba share app.
+You need file access to the Home Assistant `/config` directory.
+
+On Home Assistant OS, one convenient method is the **Samba share** app.
 
 In Home Assistant open:
 
-Settings → Apps → App Store
+**Settings → Apps → App Store**
 
 Install and configure:
 
-Samba share
+**Samba share**
 
 Set a username and password, save the configuration and start the app.
 
-Samba is only one possible method. If you already have access to
-/config through SSH, Studio Code Server or another supported method,
-you can use that instead.
+> Samba is only one possible method. If you already have access to
+> `/config` through SSH, Studio Code Server or another supported method,
+> you can use that instead.
 
-3. Connect from Windows
+------------------------------------------------------------------------
+
+### 3. Connect from Windows
 
 In Windows Explorer enter the network path for your Home Assistant
 system, for example:
 
+``` text
 \\192.168.1.100\config
+```
 
-Replace 192.168.1.100 with the IP address of your Home Assistant
+Replace `192.168.1.100` with the IP address of your Home Assistant
 installation.
 
 Authenticate with the credentials configured for Samba.
 
-4. Copy the integration
+------------------------------------------------------------------------
+
+### 4. Copy the integration
 
 Inside the Home Assistant configuration directory, locate or create:
 
+``` text
 custom_components
+```
 
 Copy the complete downloaded:
 
+``` text
 custom_components/inlema
+```
 
-directory into the Home Assistant custom_components directory.
+directory into the Home Assistant `custom_components` directory.
 
 The result must be:
 
+``` text
 /config/
 └── custom_components/
     └── inlema/
@@ -434,44 +440,58 @@ The result must be:
         │   └── logo.png
         └── frontend/
             └── inlema-card.js
+```
 
-Do not create this incorrect structure:
+Do **not** create this incorrect structure:
 
+``` text
 /config/custom_components/custom_components/inlema
+```
 
 The correct path is:
 
+``` text
 /config/custom_components/inlema
+```
 
-5. Restart Home Assistant
+------------------------------------------------------------------------
+
+### 5. Restart Home Assistant
 
 Restart Home Assistant after copying the integration.
 
 Open:
 
-Settings → System
+**Settings → System**
 
 Use the restart option and wait until Home Assistant is fully available
 again.
 
-6. Add InLeMa
+------------------------------------------------------------------------
+
+### 6. Add InLeMa
 
 Open:
 
-Settings → Devices & services → Add Integration
+**Settings → Devices & services → Add Integration**
 
 Search for:
 
+``` text
 InLeMa
+```
 
 Select the integration.
 
-7. Add the InLeMa OAuth application credentials
+------------------------------------------------------------------------
+
+### 7. Add the InLeMa OAuth application credentials
 
 During initial setup, Home Assistant asks for application credentials.
 
 Enter:
 
+``` text
 Name:
 InLeMa
 
@@ -480,24 +500,28 @@ OAuth Client ID:
 
 OAuth Client Secret:
 unused
+```
 
-Select Add.
+Select **Add**.
 
-Why is the Client Secret unused?
+#### Why is the Client Secret `unused`?
 
-InLeMa uses a public OAuth2 client with PKCE. A public PKCE client
+InLeMa uses a **public OAuth2 client with PKCE**. A public PKCE client
 does not rely on a traditional client secret.
 
 Home Assistant's manual application-credentials interface may still
-require a value in the Client Secret field. unused is therefore only a
+require a value in the Client Secret field. `unused` is therefore only a
 placeholder.
 
-It is not an InLeMa password, API key or private secret.
+It is **not** an InLeMa password, API key or private secret.
 
-8. Authorize Home Assistant
+------------------------------------------------------------------------
+
+### 8. Authorize Home Assistant
 
 Home Assistant starts the InLeMa authorization flow.
 
+``` text
 Home Assistant
       │
       ▼
@@ -511,6 +535,7 @@ Authorize Home Assistant
       │
       ▼
 Return to Home Assistant
+```
 
 Sign in to your InLeMa account and approve the requested connection.
 
@@ -519,94 +544,103 @@ Your password is entered only on the InLeMa authentication page.
 After successful authorization, Home Assistant returns to the
 integration setup and creates the available InLeMa entities.
 
-Dashboard Card Setup
+------------------------------------------------------------------------
+
+## Dashboard Card Setup
 
 The custom card type is:
 
+``` text
 custom:inlema-card
+```
 
 If the card is not automatically available in the dashboard editor,
 register its JavaScript resource manually.
 
 Open:
 
-Settings → Dashboards → Resources
+**Settings → Dashboards → Resources**
 
 Add:
 
+``` text
 URL:
 /inlema/inlema-card.js
 
 Resource type:
 JavaScript Module
+```
 
 Then refresh the Home Assistant frontend.
 
 The card can be added manually to a dashboard with:
 
+``` yaml
 type: custom:inlema-card
+```
 
 If Home Assistant has cached an older version of the JavaScript file
 after an update, a version query can be used temporarily, for example:
 
+``` text
 /inlema/inlema-card.js?v=1
+```
 
-Updating a Manual Installation
+------------------------------------------------------------------------
+
+## Updating a Manual Installation
 
 Until HACS distribution is available, updates are also installed
 manually.
 
-Download the newest repository version.
-
-Replace the existing /config/custom_components/inlema directory
-with the new custom_components/inlema directory from the
-repository.
-
-Restart Home Assistant.
-
-Refresh the browser frontend if the dashboard card was updated.
+1.  Download the newest repository version.
+2.  Replace the existing `/config/custom_components/inlema` directory
+    with the new `custom_components/inlema` directory from the
+    repository.
+3.  Restart Home Assistant.
+4.  Refresh the browser frontend if the dashboard card was updated.
 
 Do not delete your Home Assistant integration configuration before
 updating. Replacing the integration files does not require reconnecting
 the account under normal circumstances.
 
-Data Synchronization
+------------------------------------------------------------------------
+
+## Data Synchronization
 
 The integration communicates with the authenticated InLeMa account and
 periodically refreshes synchronized data.
 
-The current coordinator refresh interval is approximately 60
-seconds.
+The current coordinator refresh interval is approximately **60
+seconds**.
 
 This means changes made in InLeMa may not appear in Home Assistant
 immediately. Likewise, actions initiated through supported Home
 Assistant entities or services are sent to InLeMa and the integration
 then refreshes its data.
 
-Security & Privacy
+------------------------------------------------------------------------
+
+## Security & Privacy
 
 The integration is designed around user-scoped authentication.
 
-OAuth2 with PKCE is used for account linking.
+-   OAuth2 with PKCE is used for account linking.
+-   The OAuth client is public.
+-   Home Assistant does not receive the user's InLeMa password.
+-   The integration uses the authenticated user's OAuth access.
+-   It does not require a Supabase `service_role` key.
+-   InLeMa's server-side access controls remain responsible for
+    determining which data the authenticated user may access.
+-   Data belonging to other users is not intentionally exposed by the
+    integration.
 
-The OAuth client is public.
-
-Home Assistant does not receive the user's InLeMa password.
-
-The integration uses the authenticated user's OAuth access.
-
-It does not require a Supabase service_role key.
-
-InLeMa's server-side access controls remain responsible for
-determining which data the authenticated user may access.
-
-Data belonging to other users is not intentionally exposed by the
-integration.
-
-The unused value entered as the OAuth Client Secret is only a Home
+The `unused` value entered as the OAuth Client Secret is only a Home
 Assistant configuration placeholder.
 
-Languages
+------------------------------------------------------------------------
+
+## Languages
 
 InLeMa contains a translation layer for standard recipe and food names.
 
@@ -617,11 +651,14 @@ names remain the names chosen by the user.
 Language coverage can grow independently as additional InLeMa
 translations are added.
 
-Current Scope of v0.3.0
+------------------------------------------------------------------------
 
-Version 0.3.0 expands the integration from a next-meal sensor into a
+## Current Scope of v0.3.0
+
+Version **0.3.0** expands the integration from a next-meal sensor into a
 broader InLeMa interface for Home Assistant.
 
+``` text
 InLeMa
 │
 ├── Meal Planning
@@ -650,9 +687,13 @@ InLeMa
     ├── Meal planning
     ├── Ingredient shopping
     └── Guided Cooking Mode
+```
 
-Repository Structure
+------------------------------------------------------------------------
 
+## Repository Structure
+
+``` text
 inlema-home-assistant/
 │
 ├── .github/
@@ -686,59 +727,75 @@ inlema-home-assistant/
 ├── hacs.json
 ├── LICENSE
 └── README.md
+```
 
-HACS Status
+------------------------------------------------------------------------
+
+## HACS Status
 
 InLeMa has been submitted for inclusion in the default HACS repository.
 
-The integration should currently be installed manually.
+**The integration should currently be installed manually.**
 
 This README will be updated when installation directly through the
 default HACS repository is available.
 
-Support
+------------------------------------------------------------------------
+
+## Support
 
 Found a bug or have an idea for the integration?
 
 Use the GitHub issue tracker:
 
-https://github.com/InLeMa/inlema-home-assistant/issues
+**https://github.com/InLeMa/inlema-home-assistant/issues**
 
 For information about InLeMa:
 
-https://www.inlema.de
+**https://www.inlema.de**
 
-About InLeMa
+------------------------------------------------------------------------
 
-InLeMa combines recipes, meal planning, shopping lists and pantry
+## About InLeMa
+
+**InLeMa** combines recipes, meal planning, shopping lists and pantry
 management and connects these workflows with Home Assistant.
 
+```{=html}
 <p align="center">
-
-<a href="https://www.inlema.de">{=html} <strong>{=html}Visit InLeMa
-→</strong>{=html} </a>{=html}
-
+```
+`<a href="https://www.inlema.de">`{=html} `<strong>`{=html}Visit InLeMa
+→`</strong>`{=html} `</a>`{=html}
+```{=html}
 </p>
+```
 
-Disclaimer
+------------------------------------------------------------------------
+
+## Disclaimer
 
 InLeMa for Home Assistant is a third-party integration connecting
-InLeMa with Home Assistant.
+**InLeMa** with **Home Assistant**.
 
 Home Assistant is a trademark of the Open Home Foundation.
 
-This project is not part of the official Works with Home Assistant
+This project is not part of the official **Works with Home Assistant**
 certification program.
 
+------------------------------------------------------------------------
+
+```{=html}
 <p align="center">
-
-<img src="assets/logo.png" alt="InLeMa Logo" width="90">{=html}
-
+```
+`<img src="assets/logo.png" alt="InLeMa Logo" width="90">`{=html}
+```{=html}
 </p>
-
+```
+```{=html}
 <p align="center">
-
-<strong>{=html}InLeMa</strong>{=html}<br>{=html}
-<sub>{=html}Food management for your smart home.</sub>{=html}
-
+```
+`<strong>`{=html}InLeMa`</strong>`{=html}`<br>`{=html}
+`<sub>`{=html}Food management for your smart home.`</sub>`{=html}
+```{=html}
 </p>
+```
