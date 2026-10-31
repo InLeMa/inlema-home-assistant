@@ -80,7 +80,7 @@ If the card is not automatically available, register the following resource unde
 
 - URL: `/inlema/inlema-card.js`
 - Type: JavaScript Module
-- 
+  
 ## Secure Login
 
 InLeMa uses **OAuth2 with PKCE** to connect your account securely.
