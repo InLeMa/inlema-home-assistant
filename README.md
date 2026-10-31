@@ -65,21 +65,28 @@ The card provides quick access to:
 - Plan a meal
 - Cook a recipe
 - Add recipe ingredients to a shopping list
-- 
+  
 ### Dashboard Card Setup
 
-The InLeMa dashboard card is included in the integration.
+The InLeMa dashboard card is included in the integration and is automatically registered when Home Assistant starts.
 
-To add the card to your Home Assistant dashboard, use:
+**No manual JavaScript resource configuration is required.**
+
+To add the InLeMa card to your dashboard:
+
+1. Open your Home Assistant dashboard.
+2. Click **Edit Dashboard**.
+3. Select **Add Card**.
+4. Choose **Manual**.
+5. Enter the following configuration:
 
 ```yaml
 type: custom:inlema-card
 ```
 
-If the card is not automatically available, register the following resource under **Settings → Dashboards → Resources**:
+Save the card.
 
-- URL: `/inlema/inlema-card.js`
-- Type: JavaScript Module
+The InLeMa dashboard card is now ready to use.
   
 ## Secure Login
 
@@ -272,7 +279,7 @@ After successful authorization, your InLeMa integration is ready to use.
 
 Current version:
 
-**v0.3.0**
+**v0.3.1**
 
 ## Support
 
