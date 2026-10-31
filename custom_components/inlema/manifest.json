@@ -5,7 +5,8 @@
   "config_flow": true,
   "dependencies": [
     "application_credentials",
-    "http"
+    "http",
+    "lovelace"
   ],
   "documentation": "https://www.inlema.de",
   "integration_type": "service",
