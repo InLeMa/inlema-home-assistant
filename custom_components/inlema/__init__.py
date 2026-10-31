@@ -37,7 +37,36 @@ PLATFORMS: list[Platform] = [
     Platform.TODO,
 ]
 
+async def async_register_dashboard_card(hass: HomeAssistant) -> None:
+    """Register the InLeMa dashboard card."""
 
+    from homeassistant.components.lovelace import (
+        LOVELACE_DATA,
+        MODE_STORAGE,
+    )
+
+    lovelace = hass.data.get(LOVELACE_DATA)
+
+    if lovelace is None:
+        return
+
+    if lovelace.resource_mode != MODE_STORAGE:
+        return
+
+    resources = lovelace.resources
+    await resources.async_load()
+
+    for resource in resources.async_items():
+        if resource.get("url", "").split("?")[0] == FRONTEND_URL:
+            return
+
+    await resources.async_create_item(
+        {
+            "url": FRONTEND_URL,
+            "res_type": "module",
+        }
+    )
+    
 async def async_setup(
     hass: HomeAssistant,
     config: dict,
@@ -58,7 +87,7 @@ async def async_setup(
             ),
         ]
     )
-
+    await async_register_dashboard_card(hass)
     return True
 
 
