@@ -219,23 +219,39 @@ Wait until Home Assistant has completely restarted.
 
 In Home Assistant, go to:
 
-**Settings → Devices & services**
+**Settings → Devices & services → Add Integration**
 
-Click:
+Search for **InLeMa** and select it.
 
-**Add Integration**
+---
 
-Search for:
+### 7. Configure Application Credentials
 
-```text
-InLeMa
-```
+During the first setup, Home Assistant asks for Application Credentials.
 
-Select **InLeMa**.
+Enter the following values:
 
-Home Assistant will guide you through connecting your InLeMa account.
+| Field | Value |
+|---|---|
+| Name | InLeMa |
+| OAuth Client ID | `25eefd5b-9f3c-4176-bd2d-1aede5e8d75f` |
+| OAuth Client Secret | `unused` |
 
-Once authorization is complete, the InLeMa integration is ready to use.
+**Important:** InLeMa uses OAuth2 with PKCE and does not require a real client secret. Enter `unused` as a placeholder.
+
+Save the credentials to continue.
+
+---
+
+### 8. Connect your InLeMa account
+
+Home Assistant will redirect you to the InLeMa login page.
+
+1. Sign in with your InLeMa account.
+2. Authorize Home Assistant to access your InLeMa data.
+3. Return to Home Assistant.
+
+After successful authorization, your InLeMa integration is ready to use.
 
 ## Version
 
