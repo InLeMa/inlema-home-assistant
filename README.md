@@ -134,24 +134,26 @@ Your InLeMa password is never stored by Home Assistant.
 
 InLeMa can be installed manually or added to HACS as a custom repository. **Official inclusion in the default HACS catalog is pending approval.**
 
-### Option A: Install through HACS as a Custom Repository
 
-If you already use HACS:
+### Option A: Not yet available
 
-1. Open **HACS** in Home Assistant.
-2. Open the menu in the upper-right corner and select **Custom repositories**.
-3. Enter the repository URL:
+~~**Install through HACS as a Custom Repository**~~
 
-   ```text
-   https://github.com/InLeMa/inlema-home-assistant
-   ```
+~~If you already use HACS:~~
 
-4. Select **Integration** as the repository type and add it.
-5. Find **InLeMa** in HACS and install it.
-6. Restart Home Assistant.
-7. Continue with **Add InLeMa** below.
+~~1. Open **HACS** in Home Assistant.~~
+~~2. Open the menu in the upper-right corner and select **Custom repositories**.~~
+~~3. Enter the repository URL:~~
 
-> The exact HACS menu labels may vary between HACS versions. Adding a custom repository is only necessary until the integration is accepted into the default catalog.
+~~   `https://github.com/InLeMa/inlema-home-assistant`~~
+
+~~4. Select **Integration** as the repository type and add it.~~
+~~5. Find **InLeMa** in HACS and install it.~~
+~~6. Restart Home Assistant.~~
+~~7. Continue with **Add InLeMa** below.~~
+
+~~The exact HACS menu labels may vary between HACS versions. Adding a custom repository is only necessary until the integration is accepted into the default catalog.~~
+
 
 ### Option B: Manual Installation (Windows / Samba Share)
 
