@@ -5,12 +5,13 @@ from __future__ import annotations
 from typing import Any
 
 from aiohttp import ClientSession
+from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import config_entry_oauth2_flow
 
 from .const import SUPABASE_ANON_KEY, SUPABASE_URL
 
 
-class InLeMaApiError(Exception):
+class InLeMaApiError(HomeAssistantError):
     """Base exception for InLeMa API errors."""
 
 
@@ -45,10 +46,10 @@ class InLeMaApi:
     ) -> list[dict[str, Any]]:
         """Read data from a table."""
 
-        headers = await self._headers()
         url = f"{SUPABASE_URL}/rest/v1/{table}"
 
         try:
+            headers = await self._headers()
             async with self._session.get(
                 url,
                 headers=headers,
@@ -68,16 +69,16 @@ class InLeMaApi:
             )
 
         return data
+
     async def get_user(
         self,
     ) -> dict[str, Any]:
         """Return the authenticated Supabase user."""
 
-        headers = await self._headers()
-
         url = f"{SUPABASE_URL}/auth/v1/user"
 
         try:
+            headers = await self._headers()
             async with self._session.get(
                 url,
                 headers=headers,
@@ -96,6 +97,7 @@ class InLeMaApi:
             )
 
         return data
+
     async def post(
         self,
         table: str,
@@ -103,12 +105,11 @@ class InLeMaApi:
     ) -> list[dict[str, Any]]:
         """Insert data into a table."""
 
-        headers = await self._headers()
-        headers["Prefer"] = "return=representation"
-
         url = f"{SUPABASE_URL}/rest/v1/{table}"
 
         try:
+            headers = await self._headers()
+            headers["Prefer"] = "return=representation"
             async with self._session.post(
                 url,
                 headers=headers,
@@ -137,10 +138,10 @@ class InLeMaApi:
     ) -> None:
         """Update data in a table."""
 
-        headers = await self._headers()
         url = f"{SUPABASE_URL}/rest/v1/{table}"
 
         try:
+            headers = await self._headers()
             async with self._session.patch(
                 url,
                 headers=headers,
@@ -161,10 +162,10 @@ class InLeMaApi:
     ) -> None:
         """Delete data from a table."""
 
-        headers = await self._headers()
         url = f"{SUPABASE_URL}/rest/v1/{table}"
 
         try:
+            headers = await self._headers()
             async with self._session.delete(
                 url,
                 headers=headers,
