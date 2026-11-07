@@ -1,0 +1,12 @@
+{
+  "title": "InLeMa",
+  "config": {
+    "step": {
+      "user": {
+        "title": "InLeMa einrichten",
+        "description": "Verbinde Home Assistant mit deinem InLeMa-Konto."
+      }
+    },
+    "abort": {}
+  }
+}
