@@ -208,7 +208,7 @@ Enter the following into the address bar:
 If this does not work, use the IP address of your Home Assistant system instead:
 
 ```text
-\\192.168.1.100
+e.g. \\192.168.1.100
 ```
 
 Replace `192.168.1.100` with your actual Home Assistant IP address.
