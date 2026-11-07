@@ -312,7 +312,7 @@ After successful authorization, your InLeMa integration is ready to use.
 
 ### HACS installation - Not yet available
 
-~~ If you installed InLeMa through HACS, use the update notification in HACS when a new version becomes available. Restart Home Assistant after updating.
+~~If you installed InLeMa through HACS, use the update notification in HACS when a new version becomes available. Restart Home Assistant after updating.
 
 ### Manual installation
 
