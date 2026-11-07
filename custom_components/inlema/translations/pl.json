@@ -8,5 +8,73 @@
       }
     },
     "abort": {}
+  },
+  "entity": {
+    "sensor": {
+      "next_meal": {
+        "name": "Następny posiłek"
+      },
+      "stock": {
+        "name": "Zapasy"
+      }
+    }
+  },
+  "services": {
+    "search_recipe": {
+      "name": "Szukaj przepisu",
+      "description": "Wyszukuje przepis w InLeMa.",
+      "fields": {
+        "query": {
+          "name": "Szukana fraza",
+          "description": "Nazwa przepisu lub jej część."
+        }
+      }
+    },
+    "plan_meal": {
+      "name": "Zaplanuj posiłek",
+      "description": "Dodaje przepis InLeMa do planu posiłków.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID przepisu",
+          "description": "ID przepisu InLeMa do zaplanowania."
+        },
+        "date": {
+          "name": "Data",
+          "description": "Dzień zaplanowania przepisu."
+        },
+        "servings": {
+          "name": "Porcje",
+          "description": "Liczba porcji."
+        }
+      }
+    },
+    "add_recipe_to_shopping_list": {
+      "name": "Dodaj przepis do listy zakupów",
+      "description": "Dodaje składniki przepisu InLeMa do listy zakupów.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID przepisu",
+          "description": "ID przepisu InLeMa."
+        },
+        "shopping_list_id": {
+          "name": "ID listy zakupów",
+          "description": "ID listy zakupów InLeMa."
+        },
+        "servings": {
+          "name": "Porcje",
+          "description": "Żądana liczba porcji."
+        }
+      }
+    },
+    "get_recipe": {
+      "name": "Pobierz przepis",
+      "description": "Pobiera pełny przepis InLeMa ze składnikami i krokami przygotowania.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID przepisu",
+          "description": "UUID przepisu InLeMa."
+        }
+      }
+    }
   }
 }

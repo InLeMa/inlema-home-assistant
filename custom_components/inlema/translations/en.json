@@ -8,5 +8,73 @@
       }
     },
     "abort": {}
+  },
+  "entity": {
+    "sensor": {
+      "next_meal": {
+        "name": "Next meal"
+      },
+      "stock": {
+        "name": "Pantry"
+      }
+    }
+  },
+  "services": {
+    "search_recipe": {
+      "name": "Search recipe",
+      "description": "Search for a recipe in InLeMa.",
+      "fields": {
+        "query": {
+          "name": "Search term",
+          "description": "Recipe name or part of it."
+        }
+      }
+    },
+    "plan_meal": {
+      "name": "Plan meal",
+      "description": "Add an InLeMa recipe to the meal plan.",
+      "fields": {
+        "recipe_id": {
+          "name": "Recipe ID",
+          "description": "ID of the InLeMa recipe to plan."
+        },
+        "date": {
+          "name": "Date",
+          "description": "Day on which to plan the recipe."
+        },
+        "servings": {
+          "name": "Servings",
+          "description": "Number of servings."
+        }
+      }
+    },
+    "add_recipe_to_shopping_list": {
+      "name": "Add recipe to shopping list",
+      "description": "Add ingredients from an InLeMa recipe to a shopping list.",
+      "fields": {
+        "recipe_id": {
+          "name": "Recipe ID",
+          "description": "ID of the InLeMa recipe."
+        },
+        "shopping_list_id": {
+          "name": "Shopping list ID",
+          "description": "ID of the InLeMa shopping list."
+        },
+        "servings": {
+          "name": "Servings",
+          "description": "Desired number of servings."
+        }
+      }
+    },
+    "get_recipe": {
+      "name": "Get recipe",
+      "description": "Retrieve a full InLeMa recipe including ingredients and preparation steps.",
+      "fields": {
+        "recipe_id": {
+          "name": "Recipe ID",
+          "description": "UUID of the InLeMa recipe."
+        }
+      }
+    }
   }
 }

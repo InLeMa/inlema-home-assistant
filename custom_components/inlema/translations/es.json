@@ -8,5 +8,73 @@
       }
     },
     "abort": {}
+  },
+  "entity": {
+    "sensor": {
+      "next_meal": {
+        "name": "Próxima comida"
+      },
+      "stock": {
+        "name": "Despensa"
+      }
+    }
+  },
+  "services": {
+    "search_recipe": {
+      "name": "Buscar receta",
+      "description": "Busca una receta en InLeMa.",
+      "fields": {
+        "query": {
+          "name": "Término de búsqueda",
+          "description": "Nombre de la receta o parte de él."
+        }
+      }
+    },
+    "plan_meal": {
+      "name": "Planificar comida",
+      "description": "Añade una receta de InLeMa al plan de comidas.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID de receta",
+          "description": "ID de la receta de InLeMa que se planificará."
+        },
+        "date": {
+          "name": "Fecha",
+          "description": "Día en que se planificará la receta."
+        },
+        "servings": {
+          "name": "Raciones",
+          "description": "Número de raciones."
+        }
+      }
+    },
+    "add_recipe_to_shopping_list": {
+      "name": "Añadir receta a la lista de compras",
+      "description": "Añade los ingredientes de una receta de InLeMa a una lista de compras.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID de receta",
+          "description": "ID de la receta de InLeMa."
+        },
+        "shopping_list_id": {
+          "name": "ID de lista de compras",
+          "description": "ID de la lista de compras de InLeMa."
+        },
+        "servings": {
+          "name": "Raciones",
+          "description": "Número deseado de raciones."
+        }
+      }
+    },
+    "get_recipe": {
+      "name": "Cargar receta",
+      "description": "Carga una receta completa de InLeMa con ingredientes y pasos de preparación.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID de receta",
+          "description": "UUID de la receta de InLeMa."
+        }
+      }
+    }
   }
 }

@@ -387,6 +387,10 @@ async def async_setup_entry(
         recipe = recipes[0]
         sections = recipe.get("sections") or []
 
+        locale = (hass.config.language or "de").replace("_", "-").split("-")[0].lower()
+        if locale not in {"de", "en", "fr", "es", "pl", "ru"}:
+            locale = "de"
+
         # Collect recipe translation keys.
         recipe_keys: set[str] = set()
 
@@ -420,7 +424,7 @@ async def async_setup_entry(
                 "recipe_translations",
                 {
                     "select": "translation_key,name",
-                    "locale": "eq.de",
+                    "locale": f"eq.{locale}",
                     "translation_key": (
                         "in.("
                         + ",".join(recipe_keys)
@@ -435,6 +439,20 @@ async def async_setup_entry(
                 if row.get("translation_key")
                 and row.get("name")
             }
+
+            missing_keys = recipe_keys - recipe_translations.keys()
+            if missing_keys and locale != "de":
+                fallback_rows = await coordinator.api.get(
+                    "recipe_translations",
+                    {
+                        "select": "translation_key,name",
+                        "locale": "eq.de",
+                        "translation_key": "in.(" + ",".join(sorted(missing_keys)) + ")",
+                    },
+                )
+                for row in fallback_rows:
+                    if row.get("translation_key") and row.get("name"):
+                        recipe_translations[row["translation_key"]] = row["name"]
 
         def resolve_recipe_text(
             value: object,
@@ -475,7 +493,7 @@ async def async_setup_entry(
                 "food_translations",
                 {
                     "select": "translation_key,name",
-                    "locale": "eq.de",
+                    "locale": f"eq.{locale}",
                     "translation_key": (
                         "in.("
                         + ",".join(food_keys)
@@ -490,6 +508,20 @@ async def async_setup_entry(
                 if row.get("translation_key")
                 and row.get("name")
             }
+
+            missing_keys = food_keys - food_translations.keys()
+            if missing_keys and locale != "de":
+                fallback_rows = await coordinator.api.get(
+                    "food_translations",
+                    {
+                        "select": "translation_key,name",
+                        "locale": "eq.de",
+                        "translation_key": "in.(" + ",".join(sorted(missing_keys)) + ")",
+                    },
+                )
+                for row in fallback_rows:
+                    if row.get("translation_key") and row.get("name"):
+                        food_translations[row["translation_key"]] = row["name"]
 
         # Build translated cooking steps.
         translated_steps: list[dict] = []

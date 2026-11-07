@@ -8,5 +8,73 @@
       }
     },
     "abort": {}
+  },
+  "entity": {
+    "sensor": {
+      "next_meal": {
+        "name": "Nächste Mahlzeit"
+      },
+      "stock": {
+        "name": "Vorrat"
+      }
+    }
+  },
+  "services": {
+    "search_recipe": {
+      "name": "Rezept suchen",
+      "description": "Sucht nach einem Rezept in InLeMa.",
+      "fields": {
+        "query": {
+          "name": "Suchbegriff",
+          "description": "Name oder Teil des Rezeptnamens."
+        }
+      }
+    },
+    "plan_meal": {
+      "name": "Mahlzeit planen",
+      "description": "Fügt ein InLeMa-Rezept dem Mahlzeitenplan hinzu.",
+      "fields": {
+        "recipe_id": {
+          "name": "Rezept-ID",
+          "description": "ID des zu planenden InLeMa-Rezepts."
+        },
+        "date": {
+          "name": "Datum",
+          "description": "Tag, an dem das Rezept geplant werden soll."
+        },
+        "servings": {
+          "name": "Portionen",
+          "description": "Anzahl der Portionen."
+        }
+      }
+    },
+    "add_recipe_to_shopping_list": {
+      "name": "Rezept zur Einkaufsliste hinzufügen",
+      "description": "Fügt die Zutaten eines InLeMa-Rezepts einer Einkaufsliste hinzu.",
+      "fields": {
+        "recipe_id": {
+          "name": "Rezept-ID",
+          "description": "ID des InLeMa-Rezepts."
+        },
+        "shopping_list_id": {
+          "name": "Einkaufslisten-ID",
+          "description": "ID der InLeMa-Einkaufsliste."
+        },
+        "servings": {
+          "name": "Portionen",
+          "description": "Gewünschte Anzahl der Portionen."
+        }
+      }
+    },
+    "get_recipe": {
+      "name": "Rezept laden",
+      "description": "Lädt ein vollständiges InLeMa-Rezept einschließlich Zutaten und Zubereitungsschritten.",
+      "fields": {
+        "recipe_id": {
+          "name": "Rezept-ID",
+          "description": "UUID des InLeMa-Rezepts."
+        }
+      }
+    }
   }
 }

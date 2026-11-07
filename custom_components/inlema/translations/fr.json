@@ -8,5 +8,73 @@
       }
     },
     "abort": {}
+  },
+  "entity": {
+    "sensor": {
+      "next_meal": {
+        "name": "Prochain repas"
+      },
+      "stock": {
+        "name": "Réserves"
+      }
+    }
+  },
+  "services": {
+    "search_recipe": {
+      "name": "Rechercher une recette",
+      "description": "Rechercher une recette dans InLeMa.",
+      "fields": {
+        "query": {
+          "name": "Terme recherché",
+          "description": "Nom de la recette ou partie du nom."
+        }
+      }
+    },
+    "plan_meal": {
+      "name": "Planifier un repas",
+      "description": "Ajouter une recette InLeMa au planning des repas.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID de recette",
+          "description": "Identifiant de la recette InLeMa à planifier."
+        },
+        "date": {
+          "name": "Date",
+          "description": "Jour prévu pour la recette."
+        },
+        "servings": {
+          "name": "Portions",
+          "description": "Nombre de portions."
+        }
+      }
+    },
+    "add_recipe_to_shopping_list": {
+      "name": "Ajouter une recette à la liste de courses",
+      "description": "Ajouter les ingrédients d’une recette InLeMa à une liste de courses.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID de recette",
+          "description": "Identifiant de la recette InLeMa."
+        },
+        "shopping_list_id": {
+          "name": "ID de liste de courses",
+          "description": "Identifiant de la liste de courses InLeMa."
+        },
+        "servings": {
+          "name": "Portions",
+          "description": "Nombre de portions souhaité."
+        }
+      }
+    },
+    "get_recipe": {
+      "name": "Charger une recette",
+      "description": "Charger une recette InLeMa complète avec ingrédients et étapes de préparation.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID de recette",
+          "description": "UUID de la recette InLeMa."
+        }
+      }
+    }
   }
 }

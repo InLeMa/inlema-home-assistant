@@ -77,8 +77,12 @@ class InLeMaShoppingList(
 
         self._attr_name = (
             shopping_list.get("name")
-            or "Einkaufsliste"
+            or self._label("shopping_list")
         )
+
+    def _label(self, key: str) -> str:
+        language = (self.coordinator.hass.config.language or "de").split("-")[0]
+        return {'shopping_list': {'de': 'Einkaufsliste', 'en': 'Shopping list', 'fr': 'Liste de courses', 'es': 'Lista de compras', 'pl': 'Lista zakupów', 'ru': 'Список покупок'}, 'quantity': {'de': 'Menge', 'en': 'Quantity', 'fr': 'Quantité', 'es': 'Cantidad', 'pl': 'Ilość', 'ru': 'Количество'}, 'piece': {'de': 'Stück', 'en': 'piece', 'fr': 'pièce', 'es': 'unidad', 'pl': 'szt.', 'ru': 'шт.'}}.get(key, {}).get(language, key)
 
     def _get_list(
         self,
@@ -126,11 +130,11 @@ class InLeMaShoppingList(
             if quantity is not None:
                 if unit:
                     description_parts.append(
-                        f"Menge: {quantity} {unit}"
+                        f"{self._label('quantity')}: {quantity} {unit}"
                     )
                 else:
                     description_parts.append(
-                        f"Menge: {quantity}"
+                        f"{self._label('quantity')}: {quantity}"
                     )
 
             if notes:

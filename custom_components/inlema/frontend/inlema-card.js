@@ -1,4 +1,427 @@
 class InLeMaCard extends HTMLElement {
+  get _uiTranslations() {
+    return {
+    "de": {
+        "Heute": "Heute",
+        "Keine Mahlzeit geplant": "Keine Mahlzeit geplant",
+        "Portion": "Portion",
+        "Portionen": "Portionen",
+        "Einkaufsliste": "Einkaufsliste",
+        "Keine Rezepte gefunden.": "Keine Rezepte gefunden.",
+        "Gib einen Rezeptnamen ein.": "Gib einen Rezeptnamen ein.",
+        "Die Rezeptsuche ist fehlgeschlagen.": "Die Rezeptsuche ist fehlgeschlagen.",
+        "Mahlzeit planen": "Mahlzeit planen",
+        "Rezept kochen": "Rezept kochen",
+        "Zutaten einkaufen": "Zutaten einkaufen",
+        "Zurück": "Zurück",
+        "Fertig": "Fertig",
+        "Planen": "Planen",
+        "Rezept suchen": "Rezept suchen",
+        "Anderes Rezept": "Anderes Rezept",
+        "Zutaten": "Zutaten",
+        "Rezept": "Rezept",
+        "Rezepte": "Rezepte",
+        "NÄCHSTE MAHLZEIT": "NÄCHSTE MAHLZEIT",
+        "EINKAUF": "EINKAUF",
+        "VORRAT": "VORRAT",
+        "Lebensmittel & Mahlzeiten": "Lebensmittel & Mahlzeiten",
+        "Vorrat": "Vorrat",
+        "Positionen": "Positionen",
+        "InLeMa wird geladen …": "InLeMa wird geladen …",
+        "Rezept auswählen": "Rezept auswählen",
+        "Rezept suchen …": "Rezept suchen …",
+        "Rezeptname …": "Rezeptname …",
+        "Zutaten für Rezept einkaufen": "Zutaten für Rezept einkaufen",
+        "Wähle ein Rezept aus": "Wähle ein Rezept aus",
+        "Suche …": "Suche …",
+        "Datum": "Datum",
+        "Für diesen Schritt": "Für diesen Schritt",
+        "Hinzufügen": "Hinzufügen",
+        "Kochen starten": "Kochen starten",
+        "Mahlzeit geplant": "Mahlzeit geplant",
+        "Zutaten hinzugefügt": "Zutaten hinzugefügt",
+        "Rezept wird geladen": "Rezept wird geladen",
+        "Rezept wird vorbereitet …": "Rezept wird vorbereitet …",
+        "Keine Zutaten angegeben.": "Keine Zutaten angegeben.",
+        "Übersicht": "Übersicht",
+        "Keine InLeMa-Einkaufslisten gefunden": "Keine InLeMa-Einkaufslisten gefunden",
+        "Keine InLeMa-Einkaufsliste verfügbar.": "Keine InLeMa-Einkaufsliste verfügbar.",
+        "Rezept für": "Rezept für",
+        "Zutat": "Zutat",
+        "Schritt": "Schritt",
+        "Bitte eine gültige Portionszahl eingeben.": "Bitte eine gültige Portionszahl eingeben.",
+        "Bitte eine Einkaufsliste auswählen.": "Bitte eine Einkaufsliste auswählen.",
+        "Bitte ein Datum auswählen.": "Bitte ein Datum auswählen.",
+        "Wird hinzugefügt …": "Wird hinzugefügt …",
+        "Wird geplant …": "Wird geplant …",
+        "Die Zutaten konnten nicht hinzugefügt werden.": "Die Zutaten konnten nicht hinzugefügt werden.",
+        "Die Mahlzeit konnte nicht geplant werden.": "Die Mahlzeit konnte nicht geplant werden.",
+        "Rezept konnte nicht geladen werden": "Rezept konnte nicht geladen werden",
+        "Das vollständige Rezept konnte nicht aus InLeMa geladen werden.": "Das vollständige Rezept konnte nicht aus InLeMa geladen werden.",
+        "Keine InLeMa-Einkaufsliste": "Keine InLeMa-Einkaufsliste",
+        "OK": "OK"
+    },
+    "en": {
+        "Heute": "Today",
+        "Keine Mahlzeit geplant": "No meal planned",
+        "Portion": "serving",
+        "Portionen": "servings",
+        "Einkaufsliste": "Shopping list",
+        "Keine Rezepte gefunden.": "No recipes found.",
+        "Gib einen Rezeptnamen ein.": "Enter a recipe name.",
+        "Die Rezeptsuche ist fehlgeschlagen.": "Recipe search failed.",
+        "Mahlzeit planen": "Plan meal",
+        "Rezept kochen": "Cook recipe",
+        "Zutaten einkaufen": "Shop for ingredients",
+        "Zurück": "Back",
+        "Fertig": "Done",
+        "Planen": "Plan",
+        "Rezept suchen": "Search recipes",
+        "Anderes Rezept": "Another recipe",
+        "Zutaten": "Ingredients",
+        "Rezept": "Recipe",
+        "Rezepte": "Recipes",
+        "NÄCHSTE MAHLZEIT": "NEXT MEAL",
+        "EINKAUF": "SHOPPING",
+        "VORRAT": "PANTRY",
+        "Lebensmittel & Mahlzeiten": "Groceries & meals",
+        "Vorrat": "Pantry",
+        "Positionen": "items",
+        "InLeMa wird geladen …": "Loading InLeMa …",
+        "Rezept auswählen": "Select a recipe",
+        "Rezept suchen …": "Search recipes …",
+        "Rezeptname …": "Recipe name …",
+        "Zutaten für Rezept einkaufen": "Shop for recipe ingredients",
+        "Wähle ein Rezept aus": "Choose a recipe",
+        "Suche …": "Search …",
+        "Datum": "Date",
+        "Für diesen Schritt": "For this step",
+        "Hinzufügen": "Add",
+        "Kochen starten": "Start cooking",
+        "Mahlzeit geplant": "Meal planned",
+        "Zutaten hinzugefügt": "Ingredients added",
+        "Rezept wird geladen": "Loading recipe",
+        "Rezept wird vorbereitet …": "Preparing recipe …",
+        "Keine Zutaten angegeben.": "No ingredients specified.",
+        "Übersicht": "Overview",
+        "Keine InLeMa-Einkaufslisten gefunden": "No InLeMa shopping lists found",
+        "Keine InLeMa-Einkaufsliste verfügbar.": "No InLeMa shopping list available.",
+        "Rezept für": "Recipe for",
+        "Zutat": "ingredient",
+        "Schritt": "Step",
+        "Bitte eine gültige Portionszahl eingeben.": "Please enter a valid number of servings.",
+        "Bitte eine Einkaufsliste auswählen.": "Please select a shopping list.",
+        "Bitte ein Datum auswählen.": "Please select a date.",
+        "Wird hinzugefügt …": "Adding …",
+        "Wird geplant …": "Planning …",
+        "Die Zutaten konnten nicht hinzugefügt werden.": "Could not add the ingredients.",
+        "Die Mahlzeit konnte nicht geplant werden.": "Could not plan the meal.",
+        "Rezept konnte nicht geladen werden": "Could not load recipe",
+        "Das vollständige Rezept konnte nicht aus InLeMa geladen werden.": "The full recipe could not be loaded from InLeMa.",
+        "Keine InLeMa-Einkaufsliste": "No InLeMa shopping list",
+        "OK": "OK"
+    },
+    "fr": {
+        "Heute": "Aujourd’hui",
+        "Keine Mahlzeit geplant": "Aucun repas prévu",
+        "Portion": "portion",
+        "Portionen": "portions",
+        "Einkaufsliste": "Liste de courses",
+        "Keine Rezepte gefunden.": "Aucune recette trouvée.",
+        "Gib einen Rezeptnamen ein.": "Saisissez un nom de recette.",
+        "Die Rezeptsuche ist fehlgeschlagen.": "La recherche de recettes a échoué.",
+        "Mahlzeit planen": "Planifier un repas",
+        "Rezept kochen": "Cuisiner la recette",
+        "Zutaten einkaufen": "Acheter les ingrédients",
+        "Zurück": "Retour",
+        "Fertig": "Terminé",
+        "Planen": "Planifier",
+        "Rezept suchen": "Rechercher des recettes",
+        "Anderes Rezept": "Autre recette",
+        "Zutaten": "Ingrédients",
+        "Rezept": "Recette",
+        "Rezepte": "Recettes",
+        "NÄCHSTE MAHLZEIT": "PROCHAIN REPAS",
+        "EINKAUF": "COURSES",
+        "VORRAT": "RÉSERVES",
+        "Lebensmittel & Mahlzeiten": "Courses et repas",
+        "Vorrat": "Réserves",
+        "Positionen": "articles",
+        "InLeMa wird geladen …": "Chargement d’InLeMa…",
+        "Rezept auswählen": "Choisir une recette",
+        "Rezept suchen …": "Rechercher des recettes…",
+        "Rezeptname …": "Nom de la recette…",
+        "Zutaten für Rezept einkaufen": "Acheter les ingrédients de la recette",
+        "Wähle ein Rezept aus": "Choisissez une recette",
+        "Suche …": "Rechercher…",
+        "Datum": "Date",
+        "Für diesen Schritt": "Pour cette étape",
+        "Hinzufügen": "Ajouter",
+        "Kochen starten": "Commencer à cuisiner",
+        "Mahlzeit geplant": "Repas planifié",
+        "Zutaten hinzugefügt": "Ingrédients ajoutés",
+        "Rezept wird geladen": "Chargement de la recette",
+        "Rezept wird vorbereitet …": "Préparation de la recette…",
+        "Keine Zutaten angegeben.": "Aucun ingrédient indiqué.",
+        "Übersicht": "Vue d’ensemble",
+        "Keine InLeMa-Einkaufslisten gefunden": "Aucune liste de courses InLeMa trouvée",
+        "Keine InLeMa-Einkaufsliste verfügbar.": "Aucune liste de courses InLeMa disponible.",
+        "Rezept für": "Recette pour",
+        "Zutat": "ingrédient",
+        "Schritt": "Étape",
+        "Bitte eine gültige Portionszahl eingeben.": "Veuillez saisir un nombre de portions valide.",
+        "Bitte eine Einkaufsliste auswählen.": "Veuillez sélectionner une liste de courses.",
+        "Bitte ein Datum auswählen.": "Veuillez sélectionner une date.",
+        "Wird hinzugefügt …": "Ajout en cours…",
+        "Wird geplant …": "Planification en cours…",
+        "Die Zutaten konnten nicht hinzugefügt werden.": "Impossible d’ajouter les ingrédients.",
+        "Die Mahlzeit konnte nicht geplant werden.": "Impossible de planifier le repas.",
+        "Rezept konnte nicht geladen werden": "Impossible de charger la recette",
+        "Das vollständige Rezept konnte nicht aus InLeMa geladen werden.": "Impossible de charger la recette complète depuis InLeMa.",
+        "Keine InLeMa-Einkaufsliste": "Aucune liste de courses InLeMa",
+        "OK": "OK"
+    },
+    "es": {
+        "Heute": "Hoy",
+        "Keine Mahlzeit geplant": "No hay comidas planificadas",
+        "Portion": "ración",
+        "Portionen": "raciones",
+        "Einkaufsliste": "Lista de compras",
+        "Keine Rezepte gefunden.": "No se encontraron recetas.",
+        "Gib einen Rezeptnamen ein.": "Introduce el nombre de una receta.",
+        "Die Rezeptsuche ist fehlgeschlagen.": "La búsqueda de recetas ha fallado.",
+        "Mahlzeit planen": "Planificar comida",
+        "Rezept kochen": "Cocinar receta",
+        "Zutaten einkaufen": "Comprar ingredientes",
+        "Zurück": "Volver",
+        "Fertig": "Listo",
+        "Planen": "Planificar",
+        "Rezept suchen": "Buscar recetas",
+        "Anderes Rezept": "Otra receta",
+        "Zutaten": "Ingredientes",
+        "Rezept": "Receta",
+        "Rezepte": "Recetas",
+        "NÄCHSTE MAHLZEIT": "PRÓXIMA COMIDA",
+        "EINKAUF": "COMPRAS",
+        "VORRAT": "DESPENSA",
+        "Lebensmittel & Mahlzeiten": "Alimentos y comidas",
+        "Vorrat": "Despensa",
+        "Positionen": "artículos",
+        "InLeMa wird geladen …": "Cargando InLeMa…",
+        "Rezept auswählen": "Seleccionar una receta",
+        "Rezept suchen …": "Buscar recetas…",
+        "Rezeptname …": "Nombre de la receta…",
+        "Zutaten für Rezept einkaufen": "Comprar ingredientes de la receta",
+        "Wähle ein Rezept aus": "Elige una receta",
+        "Suche …": "Buscar…",
+        "Datum": "Fecha",
+        "Für diesen Schritt": "Para este paso",
+        "Hinzufügen": "Añadir",
+        "Kochen starten": "Empezar a cocinar",
+        "Mahlzeit geplant": "Comida planificada",
+        "Zutaten hinzugefügt": "Ingredientes añadidos",
+        "Rezept wird geladen": "Cargando receta",
+        "Rezept wird vorbereitet …": "Preparando receta…",
+        "Keine Zutaten angegeben.": "No se han indicado ingredientes.",
+        "Übersicht": "Resumen",
+        "Keine InLeMa-Einkaufslisten gefunden": "No se encontraron listas de compras de InLeMa",
+        "Keine InLeMa-Einkaufsliste verfügbar.": "No hay ninguna lista de compras de InLeMa disponible.",
+        "Rezept für": "Receta para",
+        "Zutat": "ingrediente",
+        "Schritt": "Paso",
+        "Bitte eine gültige Portionszahl eingeben.": "Introduce un número válido de raciones.",
+        "Bitte eine Einkaufsliste auswählen.": "Selecciona una lista de compras.",
+        "Bitte ein Datum auswählen.": "Selecciona una fecha.",
+        "Wird hinzugefügt …": "Añadiendo…",
+        "Wird geplant …": "Planificando…",
+        "Die Zutaten konnten nicht hinzugefügt werden.": "No se pudieron añadir los ingredientes.",
+        "Die Mahlzeit konnte nicht geplant werden.": "No se pudo planificar la comida.",
+        "Rezept konnte nicht geladen werden": "No se pudo cargar la receta",
+        "Das vollständige Rezept konnte nicht aus InLeMa geladen werden.": "No se pudo cargar la receta completa desde InLeMa.",
+        "Keine InLeMa-Einkaufsliste": "No hay lista de compras de InLeMa",
+        "OK": "Aceptar"
+    },
+    "pl": {
+        "Heute": "Dzisiaj",
+        "Keine Mahlzeit geplant": "Brak zaplanowanego posiłku",
+        "Portion": "porcja",
+        "Portionen": "porcje",
+        "Einkaufsliste": "Lista zakupów",
+        "Keine Rezepte gefunden.": "Nie znaleziono przepisów.",
+        "Gib einen Rezeptnamen ein.": "Wpisz nazwę przepisu.",
+        "Die Rezeptsuche ist fehlgeschlagen.": "Wyszukiwanie przepisu nie powiodło się.",
+        "Mahlzeit planen": "Zaplanuj posiłek",
+        "Rezept kochen": "Gotuj według przepisu",
+        "Zutaten einkaufen": "Kup składniki",
+        "Zurück": "Wstecz",
+        "Fertig": "Gotowe",
+        "Planen": "Zaplanuj",
+        "Rezept suchen": "Szukaj przepisów",
+        "Anderes Rezept": "Inny przepis",
+        "Zutaten": "Składniki",
+        "Rezept": "Przepis",
+        "Rezepte": "Przepisy",
+        "NÄCHSTE MAHLZEIT": "NASTĘPNY POSIŁEK",
+        "EINKAUF": "ZAKUPY",
+        "VORRAT": "ZAPASY",
+        "Lebensmittel & Mahlzeiten": "Produkty i posiłki",
+        "Vorrat": "Zapasy",
+        "Positionen": "pozycji",
+        "InLeMa wird geladen …": "Ładowanie InLeMa…",
+        "Rezept auswählen": "Wybierz przepis",
+        "Rezept suchen …": "Szukaj przepisów…",
+        "Rezeptname …": "Nazwa przepisu…",
+        "Zutaten für Rezept einkaufen": "Kup składniki do przepisu",
+        "Wähle ein Rezept aus": "Wybierz przepis",
+        "Suche …": "Szukaj…",
+        "Datum": "Data",
+        "Für diesen Schritt": "Do tego kroku",
+        "Hinzufügen": "Dodaj",
+        "Kochen starten": "Rozpocznij gotowanie",
+        "Mahlzeit geplant": "Posiłek zaplanowany",
+        "Zutaten hinzugefügt": "Dodano składniki",
+        "Rezept wird geladen": "Wczytywanie przepisu",
+        "Rezept wird vorbereitet …": "Przygotowywanie przepisu…",
+        "Keine Zutaten angegeben.": "Nie podano składników.",
+        "Übersicht": "Przegląd",
+        "Keine InLeMa-Einkaufslisten gefunden": "Nie znaleziono list zakupów InLeMa",
+        "Keine InLeMa-Einkaufsliste verfügbar.": "Brak dostępnej listy zakupów InLeMa.",
+        "Rezept für": "Przepis na",
+        "Zutat": "składnik",
+        "Schritt": "Krok",
+        "Bitte eine gültige Portionszahl eingeben.": "Wprowadź prawidłową liczbę porcji.",
+        "Bitte eine Einkaufsliste auswählen.": "Wybierz listę zakupów.",
+        "Bitte ein Datum auswählen.": "Wybierz datę.",
+        "Wird hinzugefügt …": "Dodawanie…",
+        "Wird geplant …": "Planowanie…",
+        "Die Zutaten konnten nicht hinzugefügt werden.": "Nie udało się dodać składników.",
+        "Die Mahlzeit konnte nicht geplant werden.": "Nie udało się zaplanować posiłku.",
+        "Rezept konnte nicht geladen werden": "Nie udało się wczytać przepisu",
+        "Das vollständige Rezept konnte nicht aus InLeMa geladen werden.": "Nie udało się wczytać pełnego przepisu z InLeMa.",
+        "Keine InLeMa-Einkaufsliste": "Brak listy zakupów InLeMa",
+        "OK": "OK"
+    },
+    "ru": {
+        "Heute": "Сегодня",
+        "Keine Mahlzeit geplant": "Приём пищи не запланирован",
+        "Portion": "порция",
+        "Portionen": "порций",
+        "Einkaufsliste": "Список покупок",
+        "Keine Rezepte gefunden.": "Рецепты не найдены.",
+        "Gib einen Rezeptnamen ein.": "Введите название рецепта.",
+        "Die Rezeptsuche ist fehlgeschlagen.": "Ошибка поиска рецепта.",
+        "Mahlzeit planen": "Запланировать приём пищи",
+        "Rezept kochen": "Приготовить блюдо",
+        "Zutaten einkaufen": "Купить ингредиенты",
+        "Zurück": "Назад",
+        "Fertig": "Готово",
+        "Planen": "Запланировать",
+        "Rezept suchen": "Поиск рецептов",
+        "Anderes Rezept": "Другой рецепт",
+        "Zutaten": "Ингредиенты",
+        "Rezept": "Рецепт",
+        "Rezepte": "Рецепты",
+        "NÄCHSTE MAHLZEIT": "СЛЕДУЮЩИЙ ПРИЁМ ПИЩИ",
+        "EINKAUF": "ПОКУПКИ",
+        "VORRAT": "ЗАПАСЫ",
+        "Lebensmittel & Mahlzeiten": "Продукты и питание",
+        "Vorrat": "Запасы",
+        "Positionen": "позиций",
+        "InLeMa wird geladen …": "Загрузка InLeMa…",
+        "Rezept auswählen": "Выбрать рецепт",
+        "Rezept suchen …": "Поиск рецептов…",
+        "Rezeptname …": "Название рецепта…",
+        "Zutaten für Rezept einkaufen": "Купить ингредиенты для рецепта",
+        "Wähle ein Rezept aus": "Выберите рецепт",
+        "Suche …": "Поиск…",
+        "Datum": "Дата",
+        "Für diesen Schritt": "Для этого шага",
+        "Hinzufügen": "Добавить",
+        "Kochen starten": "Начать готовить",
+        "Mahlzeit geplant": "Приём пищи запланирован",
+        "Zutaten hinzugefügt": "Ингредиенты добавлены",
+        "Rezept wird geladen": "Загрузка рецепта",
+        "Rezept wird vorbereitet …": "Подготовка рецепта…",
+        "Keine Zutaten angegeben.": "Ингредиенты не указаны.",
+        "Übersicht": "Обзор",
+        "Keine InLeMa-Einkaufslisten gefunden": "Списки покупок InLeMa не найдены",
+        "Keine InLeMa-Einkaufsliste verfügbar.": "Нет доступных списков покупок InLeMa.",
+        "Rezept für": "Рецепт на",
+        "Zutat": "ингредиент",
+        "Schritt": "Шаг",
+        "Bitte eine gültige Portionszahl eingeben.": "Введите допустимое количество порций.",
+        "Bitte eine Einkaufsliste auswählen.": "Выберите список покупок.",
+        "Bitte ein Datum auswählen.": "Выберите дату.",
+        "Wird hinzugefügt …": "Добавление…",
+        "Wird geplant …": "Планирование…",
+        "Die Zutaten konnten nicht hinzugefügt werden.": "Не удалось добавить ингредиенты.",
+        "Die Mahlzeit konnte nicht geplant werden.": "Не удалось запланировать приём пищи.",
+        "Rezept konnte nicht geladen werden": "Не удалось загрузить рецепт",
+        "Das vollständige Rezept konnte nicht aus InLeMa geladen werden.": "Не удалось загрузить полный рецепт из InLeMa.",
+        "Keine InLeMa-Einkaufsliste": "Нет списка покупок InLeMa",
+        "OK": "ОК"
+    }
+};
+  }
+
+  _uiLanguage() {
+    const language = (this._hass?.locale?.language || "en").replace("_", "-").split("-")[0].toLowerCase();
+    return Object.prototype.hasOwnProperty.call(this._uiTranslations, language) ? language : "en";
+  }
+
+  _t(key) {
+    return this._uiTranslations[this._uiLanguage()]?.[key] ?? key;
+  }
+
+  _ingredientAddedMessage(count, listName) {
+    const n = Number(count);
+    const messages = {
+      de: `${count} ${n === 1 ? "Zutat" : "Zutaten"} zu „${listName}“ hinzugefügt.`,
+      en: `${count} ${n === 1 ? "ingredient" : "ingredients"} added to “${listName}”.`,
+      fr: `${count} ${n === 1 ? "ingrédient ajouté" : "ingrédients ajoutés"} à « ${listName} ».`,
+      es: `${count} ${n === 1 ? "ingrediente añadido" : "ingredientes añadidos"} a «${listName}».`,
+      pl: `Dodano ${count} ${n === 1 ? "składnik" : "składników"} do „${listName}”.`,
+      ru: `Добавлено ингредиентов: ${count}. Список: «${listName}».`,
+    };
+    return messages[this._uiLanguage()] ?? messages.en;
+  }
+
+  _translateUi() {
+    const dict = this._uiTranslations[this._uiLanguage()];
+    const walker = document.createTreeWalker(this, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const node of nodes) {
+      if (node.parentElement?.closest("script,style,textarea,code")) continue;
+      const raw = node.nodeValue;
+      const trimmed = raw.trim();
+      if (!trimmed) continue;
+      const translated = dict[trimmed] ?? dict[trimmed.replace(/\s+/g, " ")];
+      if (translated && translated !== trimmed) {
+        node.nodeValue = raw.replace(trimmed, translated);
+      }
+    }
+    for (const element of this.querySelectorAll("[placeholder], [title]")) {
+      for (const attribute of ["placeholder", "title"]) {
+        const value = element.getAttribute(attribute);
+        if (value && dict[value]) element.setAttribute(attribute, dict[value]);
+      }
+    }
+  }
+
+  connectedCallback() {
+    if (!this._uiObserver) {
+      this._uiObserver = new MutationObserver(() => this._translateUi());
+      this._uiObserver.observe(this, { childList: true, subtree: true, characterData: true });
+    }
+    this._translateUi();
+  }
+
+  disconnectedCallback() {
+    this._uiObserver?.disconnect();
+    this._uiObserver = null;
+  }
+
   setConfig(config) {
     this.config = config || {};
   }
@@ -103,7 +526,7 @@ class InLeMaCard extends HTMLElement {
       `${String(today.getDate()).padStart(2, "0")}`;
 
     if (value === todayString) {
-      return "Heute";
+      return this._uiTranslations[this._uiLanguage()]["Heute"];
     }
 
     return new Intl.DateTimeFormat(
@@ -823,7 +1246,7 @@ class InLeMaCard extends HTMLElement {
                 recipe.servings
                   ? `
                     <div class="secondary">
-                      Rezept für
+                      ${this._escapeHtml(this._t("Rezept für"))}
                       ${this._escapeHtml(
                         recipe.servings
                       )}
@@ -925,7 +1348,7 @@ class InLeMaCard extends HTMLElement {
                                 ${this._escapeHtml(
                                   list.count
                                 )}
-                                offen
+                                ${this._escapeHtml(this._uiLanguage() === "de" ? "offen" : ({en:"open",fr:"à faire",es:"pendientes",pl:"do zrobienia",ru:"не выполнено"})[this._uiLanguage()])}
                               </small>
                             </span>
 
@@ -935,8 +1358,7 @@ class InLeMaCard extends HTMLElement {
                       .join("")
                   : `
                     <div class="empty">
-                      Keine InLeMa-Einkaufsliste
-                      verfügbar.
+                      ${this._escapeHtml(this._t("Keine InLeMa-Einkaufsliste verfügbar."))}
                     </div>
                   `
               }
@@ -1068,14 +1490,14 @@ class InLeMaCard extends HTMLElement {
         ) {
           errorBox.hidden = false;
           errorBox.textContent =
-            "Bitte eine gültige Portionszahl eingeben.";
+            this._t("Bitte eine gültige Portionszahl eingeben.");
           return;
         }
 
         if (!selectedList) {
           errorBox.hidden = false;
           errorBox.textContent =
-            "Bitte eine Einkaufsliste auswählen.";
+            this._t("Bitte eine Einkaufsliste auswählen.");
           return;
         }
 
@@ -1127,7 +1549,7 @@ class InLeMaCard extends HTMLElement {
           errorBox.hidden = false;
 
           errorBox.textContent =
-            "Die Zutaten konnten nicht hinzugefügt werden.";
+            this._t("Die Zutaten konnten nicht hinzugefügt werden.");
 
           addButton.disabled = false;
 
@@ -1190,17 +1612,7 @@ class InLeMaCard extends HTMLElement {
           </div>
 
           <div class="secondary">
-            ${this._escapeHtml(added)}
-            ${
-              Number(added) === 1
-                ? "Zutat"
-                : "Zutaten"
-            }
-            zu
-            „${this._escapeHtml(
-              listName
-            )}“
-            hinzugefügt.
+            ${this._escapeHtml(this._ingredientAddedMessage(added, listName))}
           </div>
 
         </div>
@@ -1291,7 +1703,7 @@ class InLeMaCard extends HTMLElement {
                 recipe.servings
                   ? `
                     <div class="secondary">
-                      Rezept für
+                      ${this._escapeHtml(this._t("Rezept für"))}
                       ${this._escapeHtml(recipe.servings)}
                       Portionen
                     </div>
@@ -1458,7 +1870,7 @@ class InLeMaCard extends HTMLElement {
         if (!date) {
           errorBox.hidden = false;
           errorBox.textContent =
-            "Bitte ein Datum auswählen.";
+            this._t("Bitte ein Datum auswählen.");
           return;
         }
 
@@ -1468,7 +1880,7 @@ class InLeMaCard extends HTMLElement {
         ) {
           errorBox.hidden = false;
           errorBox.textContent =
-            "Bitte eine gültige Portionszahl eingeben.";
+            this._t("Bitte eine gültige Portionszahl eingeben.");
           return;
         }
 
@@ -1519,7 +1931,7 @@ class InLeMaCard extends HTMLElement {
 
           errorBox.hidden = false;
           errorBox.textContent =
-            "Die Mahlzeit konnte nicht geplant werden.";
+            this._t("Die Mahlzeit konnte nicht geplant werden.");
 
           saveButton.disabled = false;
 
@@ -1961,8 +2373,8 @@ class InLeMaCard extends HTMLElement {
       );
 
       this._showMessage(
-        "Rezept konnte nicht geladen werden",
-        "Das vollständige Rezept konnte nicht aus InLeMa geladen werden."
+        this._t("Rezept konnte nicht geladen werden"),
+        this._t("Das vollständige Rezept konnte nicht aus InLeMa geladen werden.")
       );
     }
   }
@@ -2228,8 +2640,8 @@ class InLeMaCard extends HTMLElement {
           </div>
 
           <div class="dialog-subtitle">
-            Schritt ${stepIndex + 1}
-            von ${steps.length}
+            ${this._escapeHtml(this._t("Schritt"))} ${stepIndex + 1}
+            ${this._escapeHtml(({de:"von",en:"of",fr:"sur",es:"de",pl:"z",ru:"из"})[this._uiLanguage()])} ${steps.length}
           </div>
         </div>
 
@@ -2250,7 +2662,7 @@ class InLeMaCard extends HTMLElement {
 
         <div class="cooking-step-title">
           ${this._escapeHtml(
-            step.title || `Schritt ${stepIndex + 1}`
+            step.title || `${this._t("Schritt")} ${stepIndex + 1}`
           )}
         </div>
 
@@ -2610,7 +3022,7 @@ class InLeMaCard extends HTMLElement {
 
             <div class="row-right">
               <span class="row-value">
-                ${this._escapeHtml(count)} offen
+                ${this._escapeHtml(count)} ${this._escapeHtml(({de:"offen",en:"open",fr:"à faire",es:"pendientes",pl:"do zrobienia",ru:"не выполнено"})[this._uiLanguage()])}
               </span>
 
               <ha-icon

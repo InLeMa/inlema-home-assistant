@@ -67,7 +67,7 @@ class InLeMaNextMealSensor(
 ):
     """Show the next planned InLeMa meal."""
 
-    _attr_name = "Nächste Mahlzeit"
+    _attr_translation_key = "next_meal"
     _attr_icon = "mdi:food"
 
     def __init__(
@@ -85,6 +85,11 @@ class InLeMaNextMealSensor(
             f"{entry.entry_id}_next_meal"
         )
 
+    def _unknown_recipe(self) -> str:
+        """Return localized missing-recipe label."""
+        language = (self.coordinator.hass.config.language or "de").split("-")[0]
+        return {'de': 'Unbekanntes Rezept', 'en': 'Unknown recipe', 'fr': 'Recette inconnue', 'es': 'Receta desconocida', 'pl': 'Nieznany przepis', 'ru': 'Неизвестный рецепт'}.get(language, "Unknown recipe")
+
     @property
     def native_value(self) -> str | None:
         """Return the recipe name."""
@@ -97,9 +102,9 @@ class InLeMaNextMealSensor(
         recipe = meal.get("recipes")
 
         if not isinstance(recipe, dict):
-            return "Unbekanntes Rezept"
+            return self._unknown_recipe()
 
-        return recipe.get("name") or "Unbekanntes Rezept"
+        return recipe.get("name") or self._unknown_recipe()
 
     @property
     def extra_state_attributes(
@@ -138,9 +143,9 @@ class InLeMaStockSensor(
 ):
     """Show the number of InLeMa stock items."""
 
-    _attr_name = "Vorrat"
+    _attr_translation_key = "stock"
     _attr_icon = "mdi:fridge-outline"
-    _attr_native_unit_of_measurement = "Positionen"
+    _attr_native_unit_of_measurement = "items"
 
     def __init__(
         self,
@@ -217,6 +222,10 @@ class InLeMaStockItemSensor(
             f"{entry.entry_id}_stock_{stock_item_id}"
         )
 
+    def _stock_label(self) -> str:
+        language = (self.coordinator.hass.config.language or "de").split("-")[0]
+        return {'de': 'Vorrat', 'en': 'Pantry', 'fr': 'Réserves', 'es': 'Despensa', 'pl': 'Zapasy', 'ru': 'Запасы'}.get(language, "Pantry")
+
     def _get_item(
         self,
     ) -> dict[str, Any] | None:
@@ -238,15 +247,15 @@ class InLeMaStockItemSensor(
         item = self._get_item()
 
         if not item:
-            return "Vorrat"
+            return self._stock_label()
 
         name = (
             item.get("display_name")
             or item.get("name")
-            or "Vorrat"
+            or self._stock_label()
         )
 
-        return f"Vorrat {name}"
+        return f"{self._stock_label()} {name}"
 
     @property
     def native_value(self) -> int | float | None:

@@ -8,5 +8,73 @@
       }
     },
     "abort": {}
+  },
+  "entity": {
+    "sensor": {
+      "next_meal": {
+        "name": "Следующий приём пищи"
+      },
+      "stock": {
+        "name": "Запасы"
+      }
+    }
+  },
+  "services": {
+    "search_recipe": {
+      "name": "Поиск рецепта",
+      "description": "Поиск рецепта в InLeMa.",
+      "fields": {
+        "query": {
+          "name": "Поисковый запрос",
+          "description": "Название рецепта или его часть."
+        }
+      }
+    },
+    "plan_meal": {
+      "name": "Запланировать приём пищи",
+      "description": "Добавить рецепт InLeMa в план питания.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID рецепта",
+          "description": "ID рецепта InLeMa для планирования."
+        },
+        "date": {
+          "name": "Дата",
+          "description": "День, на который запланирован рецепт."
+        },
+        "servings": {
+          "name": "Порции",
+          "description": "Количество порций."
+        }
+      }
+    },
+    "add_recipe_to_shopping_list": {
+      "name": "Добавить рецепт в список покупок",
+      "description": "Добавить ингредиенты рецепта InLeMa в список покупок.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID рецепта",
+          "description": "ID рецепта InLeMa."
+        },
+        "shopping_list_id": {
+          "name": "ID списка покупок",
+          "description": "ID списка покупок InLeMa."
+        },
+        "servings": {
+          "name": "Порции",
+          "description": "Желаемое количество порций."
+        }
+      }
+    },
+    "get_recipe": {
+      "name": "Загрузить рецепт",
+      "description": "Загрузить полный рецепт InLeMa с ингредиентами и шагами приготовления.",
+      "fields": {
+        "recipe_id": {
+          "name": "ID рецепта",
+          "description": "UUID рецепта InLeMa."
+        }
+      }
+    }
   }
 }
